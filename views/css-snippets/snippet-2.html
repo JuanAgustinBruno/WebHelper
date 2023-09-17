@@ -1,0 +1,120 @@
+<div class="div__css-inner-block">
+    <table>
+        <th colspan="2">PSEUDO CLASSES:</th>
+
+        <tr>
+            <td>:nth-of-type() </td>
+            <td>Matches elements based on their position among sibilings of the same type.</td>
+        </tr>
+        <tr>
+            <td>:nth-child() </td>
+            <td>Takes a single argument that describes a pattern for matching element indices in a list
+                of
+                siblings.</td>
+        </tr>
+        <tr>
+            <td>tr:nth-child(odd) or tr:nth-child(2n+1)</td>
+            <td>Represents the odd rows of an HTML table: 1, 3, 5, etc.</td>
+        </tr>
+        <tr>
+            <td>tr:nth-child(even) or tr:nth-child(2n) </td>
+            <td>Represents the even rows of an HTML table: 2, 4, 6, etc.</td>
+        </tr>
+        <tr>
+            <td>:nth-child(7) </td>
+            <td>Represents the seventh element.</td>
+        </tr>
+        <tr>
+            <td>:nth-child(5n) </td>
+            <td> Represents elements 5 [=5×1], 10 [=5×2], 15 [=5×3], etc.</td>
+        </tr>
+        <tr>
+            <td>:nth-child(n+7) </td>
+            <td>Represents the seventh and all following elements: 7 [=0+7], 8 [=1+7], 9 [=2+7], etc.
+            </td>
+        </tr>
+        <tr>
+            <td>:nth-child(3n+4) </td>
+            <td>Represents elements 4 [=(3×0)+4], 7 [=(3×1)+4], 10 [=(3×2)+4], 13 [=(3×3)+4], etc.</td>
+        </tr>
+        <tr>
+            <td>:nth-child(-n+3) </td>
+            <td>Represents the first three elements. [=-0+3, -1+3, -2+3]</td>
+        </tr>
+        <tr>
+            <td>p:nth-child(n) </td>
+            <td>Represents every &ltp> element in a group of siblings. This selects the same elements as
+                a
+                simple p selector (although with a higher specificity).</td>
+        </tr>
+        <tr>
+            <td>p:nth-child(1) or p:nth-child(0n+1) </td>
+            <td>Represents every &ltp> that is the first element in a group of sib</td>
+        </tr>
+        <tr>
+            <td>p:nth-child(n+8):nth-child(-n+15) </td>
+            <td>Represents the eighth through the fifteenth &ltp> elements of a group of siblings.</td>
+        </tr>
+        <tr>
+            <td>:hover </td>
+            <td>triggered when the user hovers over an element with the cursor</td>
+        </tr>
+        <tr>
+            <td>:active </td>
+            <td>represents an element (such as a button) that is being activated by the user</td>
+        </tr>
+        <tr>
+            <td>:target </td>
+            <td>represents an element in the current document, that has id attribute set to a name that
+                is
+                matching the fragment identifier of the current URI. An URI fragment is what follows the
+                “number
+                sign” (#).</td>
+        </tr>
+        <tr>
+            <td>:autofill </td>
+            <td>matches when an &ltinput> element has its value autofilled by the browser</td>
+        </tr>
+        <tr>
+            <td>:enabled </td>
+            <td>represents any enabled element. An element is enabled if it can be activated (selected,
+                clicked
+                on, typed into, etc.)</td>
+        </tr>
+        <tr>
+            <td>:focus </td>
+            <td>element (such as a form input) that has received focus. It is generally triggered when
+                the user
+                clicks or taps on an element or selects it with the keyboard's Tab key.</td>
+        </tr>
+        <tr>
+            <td>:has() </td>
+            <td>element of the selectors passed as parameters (ex: &lta> elements that directly contain
+                an
+                &ltimg> child - a:has(> img))</td>
+        </tr>
+        <tr>
+            <td>:optional </td>
+            <td>any &ltinput>, &ltselect>, or &lttextarea> element that does not have the required
+                attribute set
+                on it.</td>
+        </tr>
+        <tr>
+            <td>:is/:where()</td>
+            <td>takes a selector list as its argument, and selects any element that can be selected by
+                one of
+                the selectors in that list (ex: :where(header, main, footer) p:hover)</td>
+        </tr>
+        <tr>
+            <td>:link </td>
+            <td>matches every unvisited &lta> or &ltarea> element that has an href attribute</td>
+        </tr>
+        <tr>
+            <td>:root </td>
+            <td>represents the &lthtml>, useful for declaring global CSS variables. Ex: --main-color: hotpink;</td>
+        </tr>
+    
+
+       
+    </table>
+</div>

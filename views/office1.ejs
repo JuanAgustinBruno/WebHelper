@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="scriptsA-Frame.js"></script>
+</head>
+<body>
+    
+    <a-scene>
+        <a-entity id="door" position="0 0.5 10">
+            <a-box width="1" height="2" depth="0.2" material="src: #door-texture"></a-box>
+            <a-text value="Web-Detective" position="0 0.5 0.1" align="center"></a-text>
+            <a-plane width="1" height="2" position="0 0 0" material="visible: false"></a-plane>
+            <a-animation attribute="position" dur="1000" easing="ease-in" to="-9 1 0"></a-animation>
+       </a-entity>
+        <!-- Lighting -->
+        <a-entity light="type: ambient; intensity: 0.6; color: #ebebeb"></a-entity>
+        <a-entity light="type: point; intensity: 0.8; distance: 20; decay: 1; color: #f5d043; position: -5 5 0"></a-entity>
+        
+        <!-- Floor -->
+        <a-box position="0 -0.5 0" width="20" depth="20" height="0.1" color="#999"></a-box>
+             
+        <!-- Ceiling -->
+        <a-box position="0 2 0" width="20" depth="20" height="0.2" color="#333"></a-box>
+        
+        <!-- Walls -->
+        <a-box position="-10 0.7 0"  width="0.1" depth="20" height="2.5" color="#555">
+            <a-text value="WEST" position="0.1 0.5 0.1" rotation="0 90 0"></a-text>
+        </a-box>
+        <a-box position="0 0.7 10" width="0.1" depth="20" height="2.5" color="#555" rotation="0 90 0"></a-box>
+
+        <a-box position="0 0.7 -10" width="0.1" depth="20" height="2.5" color="#555" rotation="0 90 0">
+            <a-text value="NORTH" position="-0.3 0.5 0.1" rotation="0 -90 0"></a-text>
+            <a-box position="-0.2 0.1 2" width="0.2" height="2" depth="2" material="src: public/pick1.jpg"></a-box>
+            
+           
+            
+            
+                <!-- "button" -->
+
+                
+            <a-entity culus-touch-controls x-button-listener geometry="primitive: box" material="color: red" position="0 0 -2"></a>
+
+
+                onclick="window.location.assign('/')"
+                    
+      
+              
+              
+              
+            
+            
+        </a-box>
+        <a-box position="10 0.7 0" width="0.1" depth="20" height="2.5" color="#555">
+            <a-text value="EAST" position="-0.3 0.5 0.1" rotation="0 -90 0"></a-text>
+        </a-box>    
+        
+    </a-scene>
+    <Script>
+    var doorEl = document.querySelector('#door');
+
+        doorEl.querySelector('a-plane').addEventListener('click', function () {
+          doorEl.setAttribute('animation', 'enabled', true);
+        });
+    </Script>
+
+</body>
+
+</html>

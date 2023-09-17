@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {  
+    background-color: rgb(70, 62, 62);
+    min-height: 100vh;
+    color: rgb(235, 227, 227)
+}
+
+#wraper {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(15, 14, 14);
+    height: 100%;
+}
+
+#innerwraper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-height: 100vh;    
+}
+
+#box {
+    
+    background-color: rgb(70, 62, 62);
+    width: 80%;
+    padding: 1rem;    
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(48, 35, 35);
+    width: 20%;    
+}
+
+button {
+    background-color: rgb(27, 19, 97);
+    color: rgb(213, 208, 243);
+    width: 90%;
+    height: 3rem;
+    align-self: center;
+    padding: 0.5rem ;
+    margin: 0.5rem;
+    box-shadow: 4px 4px 1px -1px rgb(46, 34, 13);
+}
+
+button:hover {
+    background-color: rgb(137, 143, 233);
+    color: rgb(14, 38, 41);
+    font-weight: 800;
+    box-shadow: none;
+    transform: translateY(2px);
+    box-shadow: 3px 3px 1px -1px rgb(46, 34, 13);
+}
+
+button:active {
+    background: linear-gradient(to right, rgb(27, 19, 97), rgb(137, 143, 233));
+    color: rgb(27, 3, 3);
+}
+
+
+#button1 {
+    
+    width: 10em;
+    height: 6em;
+    margin: 0;
+    padding: 0;
+    object-fit: cover;
+    max-height: 3rem;
+    font-size: 1rem;
+}
+
+/* MAIN SYLES HTML CSS */
+
+.main_box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.content_box{
+    margin-top: 3rem;
+    text-align: center;    
+}
+
+ul {
+    margin: 2rem;
+}
+
+li{
+    margin: 1rem;
+}
+
+/* CSS TABLE */
+.div__css-inner-block {
+    max-width: 100%;
+    color: rgb(219, 231, 221);
+    font-weight: bold;
+    
+}
+table { 
+       border-collapse: collapse;
+}
+
+tr { 
+    border: 3px solid rgb(236, 187, 187);
+    
+}
+td {
+    padding: 0.5em;
+}
+
+.article {
+    
+    box-sizing: border-box;
+    max-width: 330px;
+    background-color: grey;
+}
+
+.float {
+    float: right;
+    width: 170px;
+    height: 170px;
+    margin-left: 15px;
+
+}
+
+.indent {
+    
+    position: inherit;
+    padding-left: 26px;
+}

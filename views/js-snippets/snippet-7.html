@@ -1,0 +1,312 @@
+//FUNCTIONS<br>
+//defining a function<br>
+let counter = 0;<br>
+function count() {<br>
+    <br>
+    counter++;<br>
+<br>
+    console.log(counter);<br>
+}<br>
+<br>
+<br>
+function singSong() {<br>
+    console.log("do");<br>
+    console.log("re");<br>
+    console.log("mi");<br>
+}<br>
+<br>
+singSong()<br>
+<br>
+<br>
+//arguments<br>
+<br>
+function greet(firstName){<br>
+    console.log(`Hey there, ${firstName}!`)<br>
+}<br>
+<br>
+greet("Name")<br>
+<br>
+//Exercise<br>
+<br>
+function rant(message){<br>
+    console.log(message.toUpperCase())<br>
+    console.log(message.toUpperCase())<br>
+    console.log(message.toUpperCase())<br>
+}<br>
+<br>
+rant("I hate beets")<br>
+<br>
+//multiple ARGUMENTS<br>
+<br>
+function greet(firstName, lastName) {<br>
+    console.log(`Hey there, ${firstName} ${lastName[0]}.`)<br>
+}<br>
+
+greet("Luis","Alvarez");<br>
+"Hey there, Luis A."<br>
+<br>
+function repeat (str, numTimes) {<br>
+    let result = "";<br>
+    for (let i = 0; i < numTimes; i++) {<br>
+        result += str;<br>
+    }<br>
+    console.log(result);<br>
+}<br>
+<br>
+repeat("ja",20)<br>
+jajajajajajajajajajajajajajajajajajajaja<br>
+<br>
+<br>
+//exercise 37<br>
+//<br>
+function isSnakeEyes(num1,num2) {<br>
+    if (num1 == 1 && num2 == 1){<br>
+        console.log("Snake Eyes!");<br>
+    } else {<br>
+        console.log("Not Snake Eyes!");<br>
+}<br>
+}<br>
+//aldo version<br>
+<br>
+function rollDice() { return Math.floor(Math.random() * 6) +1; }<br>
+<br>
+function isSnakeEyes(num1,num2) {<br>
+    if (num1 == 1 && num2 == 1){<br>
+        console.log("Snake Eyes!");<br>
+    } else {<br>
+        console.log("Not Snake Eyes!");<br>
+        console.log(num1,num2)<br>
+ }<br>
+}<br>
+<br>
+isSnakeEyes(rollDice(),rollDice());<br>
+<br>
+<br>
+//function RETURN<br>
+<br>
+function add(x, y) {<br>
+    if (typeof x !== "number" || typeof y !== "number") {  <br> 
+        return false;   <br>          
+    }<br>
+    return x + y;<br>
+}<br>
+<br>
+//exercise 38<br>
+<br>
+function multiply(x,y){<br>
+    return x * y;<br>
+    }<br>
+<br>
+//exercise 39<br>
+<br>
+function isShortsWeather(t){<br>
+    if (t >= 75) {<br>
+        return true;<br>
+    } else {<br>
+        return false;<br>
+    }<br>
+}<br>
+<br>
+//exercise 40<br>
+<br>
+function lastElement(array){<br>
+    if (array[-1])<br>
+        return array<br>
+} else if {<br>
+    array = null<br>
+    console.log(null)<br>
+}<br>
+<br>
+<br>
+//FUNCTIONS LVL UP<br>
+
+//Lexical Scope<br>
+<br>
+function bankRobbery() {<br>
+    const heroes = ["Spiderman", "Wolverine", "Black Panther"]<br>
+    function cryForHelp() {<br>
+        function inner() {<br>
+            for (let hero of heroes) {<br>
+                console.log(`please help us, ${hero.toUpperCase()}`)<br>
+            }<br>
+        }<br>
+        inner();<br>
+    }<br>
+    cryForHelp();<br>
+    <br>
+}<br>
+<br>
+function outer() {<br>
+    let hero = "black panther";<br>
+    function inner() {<br>
+        let cryForHelp = `${hero}, please save me!`<br>
+        console.log(cryForHelp);<br>
+    }<br>
+    inner();<br>
+}<br>
+<br>
+//Exercise 44<br>
+
+const square = function(num){<br>
+    return Math.pow(num,2)<br>
+}<br>
+<br>
+//Higher order functions<br>
+
+function callTwice (func) {<br>
+    func();<br>
+    func();<br>
+}<br>
+<br>
+function rollDie() {
+    const roll = Math.floor(Math.random() * 6) + 1<br>
+    console.log(roll)<br>
+}<br>
+<br>
+callTwice(rollDie)<br>
+<br>
+function callTenTimes(f) {<br>
+    for (let i = 0; i < 10; i++)<br>
+    f()<br>
+}<br>
+<br>
+callTenTimes(rollDie)<br>
+<br>
+//Returning functions<br>
+<br>
+function makeMysteryFunc() {<br>
+    const rand = Math.random();<br>
+    if (rand > 0.5) {<br>
+        return function () {<br>
+            console.log("CONGRATS, I AM A GOOD FUNCTION!")<br>
+            console.log("YOU WIN A MILLION DOLLARS!!")<br>
+        }<br>
+    } else {<br>
+        return Function () {<br>
+            alert("YOU HAVE BEEN INFECTED BY A VIRUS!")<br>
+            alert("STOP TRYING TO CLOSE THIS WINDOW!")<br>
+            alert("STOP TRYING TO CLOSE THIS WINDOW!")<br>
+            alert("STOP TRYING TO CLOSE THIS WINDOW!")<br>
+            alert("STOP TRYING TO CLOSE THIS WINDOW!")<br>
+            alert("STOP TRYING TO CLOSE THIS WINDOW!")<br>
+            <br>
+        }<br>
+    }<br>
+}<br>
+<br>
+//factory function<br>
+<br>
+function makeBetweenFunc(min,max) {<br>
+    return function(num) {<br>
+        return num >= min && num <= max; <br>
+    }<br>
+}<br>
+<br>
+//in console<br>
+const isChild = makeBetweenFunc(0,18)<br>
+undefined<br>
+isChild(40)<br>
+false<br>
+isChild(7)<br>
+true<br>
+<br>
+const isAdult = makeBetweenFunc (19,64);<br>
+const isSenior = makeBetweenFunc (65,120);<br>
+<br>
+//function method to object<br>
+<br>
+const myMath = {<br>
+    PI: 3.141592,<br>
+    square: function (num) {<br>
+        return num * num;
+    },<br>
+    cube: function (num) {<br>
+        return num ** 3;<br>
+    }<br>
+}<br>
+<br>
+//in console<br>
+myMath<br>
+{PI: 3.141592, square: ƒ, cube: ƒ}<br>
+myMath.square(2)<br>
+4<br>
+myMath.square(myMath.PI)<br>
+9.869600294464002<br>
+myMath.cube(3)<br>
+27<br>
+<br>
+// exercise 45 <br>
+<br>
+const square = {<br>
+    area: function (num) {<br>
+        return num * num;<br>
+    },<br>
+    perimeter: function (num) {<br>
+        return num * 4;<br>
+    },<br>
+    <br>
+}<br>
+
+//Default parameters<br>
+<br>
+function rollDie(numSides = 6) {<br>
+    return Math.floor(Math.random()  * numSides) +1<br>
+}<br>
+<br>
+rollDie()<br>
+4<br>
+rollDie(20)<br>
+16<br>
+<br>
+function greet(person, msg = "hey there", punc = "!") {<br>
+    console.log(`${msg},${person}${punc}`)<br>
+}<br>
+
+greet("agustin")<br>
+test.js:2 hey there,agustin!<br>
+<br><br>
+//destructuring parameters<br>
+function fullName(user){<br>
+    return `${user.firstName} ${user.lastName}`<br>
+}<br>
+function fullName(user) {<br>
+    const {firstName, lastName} = user;<br>
+    return `${firstName} ${lastName}`<br>
+}<br>
+//destructured<br>
+function fullName({firstName, lastName}) {<br>
+    return `${firstName} ${lastName}`<br>
+}<br>
+<br>
+fullName(user)<br>
+'Harvey Milk'<br>
+
+<br><br>
+//destructuring example<br>
+const movies = [<br>
+    {<br>
+        title: "amadeus",<br>
+        score: 99,<br>
+        year:1999<br>
+    },<br>
+    {<br>
+        title: "stand by me",<br>
+        score: 85,<br>
+        year: 1983<br>
+    },<br>
+    {<br>
+        title: "parasite",<br>
+        score: 95,<br>
+        year: 1955<br>
+    }<br>
+]<br>
+<br>
+movies.map(movie => {<br>
+    return `${movie.title} (${movie.year}) is rated ${movie.score}`<br>
+})<br>
+//destructured<br>
+movies.map(({title, score, year}) => {<br>
+    return `${title} (${year}) is rated ${score}`<br>
+})<br>
+<br>
+(3) ['amadeus (1999) is rated 99', 'stand by me (1983) is rated 85', 'parasite (1955) is rated 95']<br>

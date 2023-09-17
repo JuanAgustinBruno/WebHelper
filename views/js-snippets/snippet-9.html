@@ -1,0 +1,23 @@
+// TRY & CATCH : used to detect possible errors in the code<br>
+<br>
+try {<br>
+    hello.toUpperCase();<br>
+} catch { <br>
+    console.log("error!")<br>
+}<br>
+<br>
+function yell(msg){<br>
+    try {<br>
+    console.log(msg.toUpperCase().repeat(3));<br>
+    } catch (e) {<br>
+        console.log(e);<br>
+        console.log("type a string")<br>
+    } <br>
+}<br>
+<br>
+//en consola<br>
+yell()<br>
+test.js:5 TypeError: Cannot read properties of undefined (reading 'toUpperCase')<br>
+    at yell (test.js:3:21)<br>
+    at <anonymous>:1:1<br>
+test.js:6 type a string<br>

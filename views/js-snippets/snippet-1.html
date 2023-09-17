@@ -1,0 +1,100 @@
+<div class="div__js-outer">
+    <h1>JavaScript Variables</h1><br>
+
+    <ul>
+        <li>Automatic: x = 5;</li>
+        <li>
+            var: used in code written for older browsers 
+        </li>
+        <li>let: </li>
+        <li>const: </li>
+    </ul><br><br>
+
+    <h2>Data types:</h2>
+    <ul>
+        <li>string: "hi"</li>
+        <li>number: 1</li>
+        <li>boolean: true/false</li>
+        <li>undefined</li>
+        <li>null</li>
+        <li>symbol</li>
+        <li>bigint</li>
+    </ul><br><br>
+    <h2>Declare variable:</h2>
+
+    <div class="div__js-inner"><code><span class="clr-var">let</span> <span class="clr-var-name">variable-name</span> = <span class="clr-meth">number-string-object</span>;</code></div>
+</div>
+
+<h2>Modify variable:</h2>
+
+<div class="div__js-inner">
+    <code>
+        variable = variable + 1;  -----> variable += 1; ------> variable++;<br><br>
+
+        <br>
+        variable = variable - 1;  -----> variable -= 1; ------>  variable--; <br>
+
+        <br>
+        
+    </code>
+</div>
+
+<h2>Variable that cant be modified:</h2>
+
+<div class="div__js-inner"><code>const pi = 3.14;</code></div>
+
+
+<h2>Old javascript variable</h2>
+
+<div class="div__js-inner"><code>var variable = 36;</code></div>
+
+<h2>Variable BOOLEAN</h2>
+
+<div class="div__js-inner">
+    <code>
+        true<br>
+        false<br><br>
+        1 == "1" (equality regardless of variable type)<br>
+        true<br><br>
+        1 === "1" (strict equality)<br>
+        false<br><br>
+        1 != "1" (inequality without distinction)<br>
+        false<br><br>
+        1 !== "1" (strict inequality)<br>
+        true<br>
+
+    </code>
+
+</div>
+<p>The strict inequality operator (!==) checks whether its two operands are not equal, returning a Boolean
+    result.</p>
+
+<h2> String: text variable</h2>
+<div class="div__js-inner">
+    <code>
+        let variable = "text"<br>
+        
+    </code>
+</div>
+<hr>
+<hr>
+<h2>STRING TEMPLATE LITERALS:</h2>
+<div class="div__js-inner">
+    <code>`hello ${1+2+3}` = "hello 6" </code>(using "backtics" compilator detects text as
+    javascript instead of string)
+</div>
+
+
+<h3> Example 1:</h3>
+<div class="div__js-inner">
+    <code>
+        let product = "artichoke";<br><br>
+        let price = 2.25;<br><br>
+        let qty = 5;<br><br>
+        `You bought ${qty} ${product}. Total is: ${price*qty}` = 'You bought 5 artichoke. Total is: 11.25'<br><br>
+    </code>
+</div>
+<a href="https://superuser.com/questions/254076/how-do-i-type-the-tick-and-backtick-characters-on-windows"
+    target="_blanck">Backtics</a><br><br>
+
+</div>

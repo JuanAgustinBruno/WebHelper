@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: o;
+    text-decoration: 0;
+    
+}
+/* -----------------------MAIN MENU---------------------------- */
+.nav_main_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav_main_buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 500px;
+    border-radius: 20px;
+    background-color: black;
+    opacity: 0.7;
+}
+
+.nav_button {
+    height: 30px;
+    width: 100px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 15px;
+    background-color: lightblue;
+    font-weight: 800;
+    transition: background-color 1s, transform 1s, color 1s,font-weight 1s;
+    box-shadow: 4px 4px 1px -1px rgb(112, 139, 148);
+}
+
+.nav_button:hover {
+    background: linear-gradient(to right, lightblue, blue);
+    color: white;
+    font-weight: 800;
+    box-shadow: none;
+    transform: translateY(2px);
+    
+    box-shadow: 3px 3px 1px -1px rgb(41, 34, 102);
+}
+.nav_button:active {
+    background: linear-gradient(to right, blue, lightblue);
+    color: gold;
+}
+
+/* ----------------------------SECTION MAIN --------------------------- */
+
+
+.section_main_container {
+    
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.nav_left_container{
+    width: 20%;
+    background-color: white;
+}
+
+.nav_left_buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+}
+
+.main_container {
+    width: 60%;
+    background-color: white;
+}
+
+.main_header{
+    width: 100%;
+    height: 100px;
+    background-color: blue;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.nav_right_container {
+    width: 20%;
+    background-color: white;
+}
+
+.titlecenter {
+    
+    width: 350px;
+    padding: 1rem;
+    text-align: center;
+    color: rgb(0, 255, 221);
+    background-color: blue;
+    border-radius: 20px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    background-image: url(public/pick1.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+

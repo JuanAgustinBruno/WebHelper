@@ -1,0 +1,238 @@
+<div class="p">
+    <h2> LOOPS:</h2>
+    <p>Structure:<br>
+        for ([initialExpression]; [conditionExpression]; [incrementExpression])<br>
+        statement</p>
+    <div class="div__js-inner">
+        <p>Example 1: Count to 10</p>
+        for (let num = 1; num <= 10; num += 1) { <span class="clr-comment">(creates a variable called num, if num less or equal to 10 , 1 is added to the num)</span><br><br>
+            console.log(num);<br>
+        }<br><br><br>
+
+        <p>Example 2: Repeat text</p>
+        const n = 5;<br><br>
+        for (let i = 1; i <= n; i++) {<br><br>
+        console.log(`I love JavaScript.`);<br><br>
+        }<br><br><br>
+
+
+        <p>INFINITE LOOP , WARNING!!</p>
+
+        for (let i = 1; i >= 1; i ++){ <br><br>
+            console.log(i);<br><br>
+        } <br><br><br>
+
+        // ======================<br>
+        // ITERATING OVER ARRAYS!<br>
+        // ======================<br><br><br>
+        Example 1:<br>
+        const animals = [<br>
+            "Aardvark",<br>
+            "Aardwolf",<br>
+            "African Elephant",<br>
+            "African Tree Pangolin",<br>
+            "Alligator",<br>
+            "Alpaca",<br>
+            "Anteater",<br>
+            "Antelope",<br>
+            "Ape(s)",<br>
+            "Arabian Horse",<br>
+            "Armadillo",<br>
+            "Arthropod(s)",<br>
+            "Asian Elephant",<br>
+            "Aye-Aye"<br>
+
+        ]<br><br>
+
+        for (let i = 0; i < animals.length; i++) {<br>
+            console.log(i, animals[i])<br>
+        }<br><br>
+        <br>
+        Example 2:<br>
+        const people = ["Scooby", "Velma", "Daphne", "Shaggy", "Fred"];<br>
+        for(let i = 0; i < people.length; i++){<br>
+        console.log(people[i].toUpperCase());<br>
+        }<br><br>
+
+        //NESTED LOOPS<br><br>
+
+        for (let i = 1; i <= 10; i++) {<br>
+            console.log(`i is: ${i}`)<br>
+            for (let j = 1; j < 4; j++) {<br>
+                console.log (`    j is: ${j}`)<br>
+            }<br>
+        }<br>
+        <br>
+        //WHILE LOOP<br>
+        <br>
+        let count = 0;<br>
+        while (count < 10) {<br>
+            count++;<br>
+            console.log(count)<br>
+        }<br><br>
+
+        const SECRET = "BabyHippo";<br><br>
+
+        let guess = promt("enter the secret code...");<br>
+        while (guess !== SECRET) {<br>
+            guess = prompt("enter the secret code...");<br>
+        }<br>
+        console.log("CONGRATS YOU GOT THE SECRET!!!")<br><br>
+
+
+        //break<br><br>
+
+        let input = prompt ("Hey, say something!")<br>
+        while (true) {<br>
+            input = prompt(input);<br>
+            if (input === "stop copying me") {<br>
+                break; //cut the ploop<br>
+            }<br>
+        
+        }<br>
+        console.log("OK YOU WIN!")<br><br>
+
+        for (let i = 0; i < 1000; i++) {<br>
+            console.log(i);<br>
+            if (i === 100) break;<br>
+        }<br><br>
+
+
+        //exercise LOOPs<br><br>
+
+        let maximum = parseInt(prompt("Enter the maximum number"));<br>
+        while (!maximum){<br>
+            maximum = parseInt(prompt("Enter a valid number!"));<br>
+        }<br><br>
+
+        const targetNum = Math.floor(Math.random() * maximum) + 1;<br>
+        console.log(targetNum);<br><br>
+
+        let guess = parseInt(prompt("Enter your first guess"));<br>
+        let attempts = 1;<br><br>
+
+        while (parseInt(guess) !== targetNum) {<br>
+            if (guess === "q") break;<br>
+            attempts++;<br>
+            if (guess > targetNum) {<br>
+                guess = prompt("Too high! Enter a new guess:")<br>
+            } else {<br>
+                guess = prompt("Too low! Enter a new guess:")<br>
+            }<br>
+        }<br>
+        if (guess === "q") {<br>
+            console.log ("OK, Bye")<br>
+        } else {<br>
+            console.log("congrats")<br>
+            console.log(`You got it! It took you ${attempts} guesses`)<br>
+        }<br><br>
+
+        // FOR OF LOOP<br><br>
+
+
+        const airplaneSeats = [<br>
+            ['Ruth', 'Anthony', 'Stevie'],<br>
+            ['Amelia', 'Pedro', 'Maya'],<br>
+            ['Xavier', 'Ananya', 'Luis'],<br>
+            ['Luke', null, 'Deniz'],<br>
+            ['Rin', 'Sakura', 'Francisco']<br>
+        ]<br><br>
+
+        for (let row of airplaneSeats) {<br>
+            for (let passenger of row) {<br>
+                console.log(passenger);<br>
+            }<br>
+        }<br>
+
+        for (let char of "hello world") {<br>
+            console.log(char)<br>
+        }<br><br>
+
+
+        //EXERCISE FOR OF : use a for of loop to loop over it and print out the square number of each value<br><br>
+
+        const numbers = [1,2,3,4,5,6,7,8,9]; //DON'T CHANGE THIS LINE PLEASE!<br><br>
+
+        // WRITE YOUR LOOP BELOW THIS LINE:<br><br>
+
+        for (let quad of numbers){<br>
+            let results = Math.pow(quad,2)<br>
+            console.log(results)<br>
+
+        }<br><br>
+
+        // OBJECT LOOP<br><br>
+
+        const testScores = {<br>
+            keenan: 80,<br>
+            damon: 67,<br>
+            kim: 89,<br>
+            shawn: 91,<br>
+            marlon: 72<br>
+        }<br>
+        for (let person in testScores) {<br>
+            console.log( ` ${person} scored ${testScores[person]}`);<br>
+        }<br><br>
+
+        //en consola<br>
+        Object.values(testScores)<br>
+        (5) [80, 67, 89, 91, 72]<br>
+        Object.keys(testScores)<br>
+        (5) ['keenan', 'damon', 'kim', 'shawn', 'marlon']<br>
+        Object.entries(testScores)<br>
+        (5) [Array(2), Array(2), Array(2), Array(2), Array(2)]<br>
+        0: (2) ['keenan', 80]<br>
+        1: (2) ['damon', 67]<br>
+        2: (2) ['kim', 89]<br>
+        3: (2) ['shawn', 91]<br>
+        4: (2) ['marlon', 72]<br>
+        length: 5<br>
+        [[Prototype]]: Array(0)<br><br>
+
+        //calcula el promedio de los valores<br>
+        let total = 0;<br>
+        let scores = Object.values(testScores);<br>
+        for (let score of scores) {<br>
+            total += score;<br>
+        }<br>
+        console.log (total /scores.length)<br><br>
+
+
+        //todo exercise <br>
+        //-------------------------------------------------------------------<br>
+        let input = prompt("what would you like to do?");<br>
+        const todos = ["collect chicken eggs", "clean litter"];<br><br>
+
+        while (input !== "quit" && input !== "q") {<br>
+
+            if (input === "list") {<br>
+                console.log("*********")<br>
+                for(let i = 0; i < todos.length; i++){<br>
+                    console.log(`${i}: ${todos[i]}`);<br>
+                }<br>
+                console.log("*********")<br><br>
+            
+            } else if (input === "new") {<br>
+                    const newTodo = prompt("what is the new todo?");<br>
+                    todos.push(newTodo);<br>
+                    console.log(`${newTodo} added to the list!`)<br><br>
+            
+            } else if (input === "delete") {<br>
+                const index = parseInt (prompt("ok, enter an index to delete"));<br>
+
+                if (!Number.isNaN(index)) {<br>
+                const deleted = todos.splice(index, 1);<br>
+                console.log (`ok, deleted ${deleted[0]}`);<br>
+                } else {<br>
+                    console.log("Unknown index")<br>
+                }<br>
+            }<br><br>
+
+            input = prompt("what would you like to do?")<br>
+        }<br>
+        console.log("ok, bye")<br>
+
+    </div>
+</div>
+</div>
+

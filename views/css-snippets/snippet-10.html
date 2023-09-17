@@ -1,0 +1,242 @@
+<div class="div__css-inner-block">
+    <h2>TRANSFORM</h2>
+
+    <table>
+        <tr>
+            <th>Transform:</th>
+            <td></td>
+            <td> lets you rotate, scale, skew, or translate an element. It modifies the coordinate space
+                of the
+                CSS</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>matrix() </td>
+            <td>Describes a homogeneous 2D transformation matrix.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>matrix3d() </td>
+            <td>Describes a 3D transformation as a 4x4 homogeneous matrix.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>perspective()</td>
+            <td>Sets the distance between the user and the z=0 plane.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>rotate() </td>
+            <td>Rotates an element around a fixed point on the 2D plane.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>rotate3d() </td>
+            <td>Rotates an element around a fixed axis in 3D space.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>rotateX() </td>
+            <td>Rotates an element around the horizontal axis.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>rotateY() </td>
+            <td>Rotates an element around the vertical axis.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>rotateZ() </td>
+            <td>Rotates an element around the z-axis.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>scale() </td>
+            <td>Scales an element up or down on the 2D plane.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>scale3d() </td>
+            <td>Scales an element up or down in 3D space.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>scaleX() </td>
+            <td>Scales an element up or down horizontally.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>scaleY() </td>
+            <td>Scales an element up or down vertically.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>scaleZ() </td>
+            <td>Scales an element up or down along the z-axis.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>skew() </td>
+            <td>Skews an element on the 2D plane.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>skewX() </td>
+            <td>Skews an element in the horizontal direction.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>skewY() </td>
+            <td>Skews an element in the vertical direction.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>translate() </td>
+            <td>Translates an element on the 2D plane.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>translate3d()</td>
+            <td>Translates an element in 3D space.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>translateX() </td>
+            <td>Translates an element horizontally.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>translateY() </td>
+            <td>Translates an element vertically.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>translateZ() </td>
+            <td>Translates an element along the z-axis.</td>
+        </tr>
+        <tr>
+            <th>Transform-origin:</th>
+            <td></td>
+            <td>sets the origin for an element's transformations.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>One-value syntax: </td>
+            <td>represents the horizontal offset, &ltlength>, a &ltpercentage>, or one of the keywords
+                left,
+                center, right, top, and bottom</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Two-value syntax </td>
+            <td>first value represents the horizontal offset and the second represents the vertical
+                offset.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Three-value syntax:</td>
+            <td>The third value must be a &ltlength>. It always represents the Z offset.</td>
+        </tr>
+        <tr>
+            <th>Transform-box:</th>
+            <td></td>
+            <td>defines the layout box to which the transform and transform-origin properties relate.
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>content-box</td>
+            <td>The content box is used as the reference box. The reference box of a &lttable> is the
+                border box
+                of its table wrapper box, not its table box.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>border-box </td>
+            <td>The border box is used as the reference box. The reference box of a &lttable> is the
+                border box
+                of its table wrapper box, not its table box.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>fill-box </td>
+            <td>The object bounding box is used as the reference box.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>stroke-box </td>
+            <td>The stroke bounding box is used as the reference box.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>view-box </td>
+            <td>The nearest SVG viewport is used as the reference box. If a viewBox attribute is
+                specified for
+                the SVG viewport creating element, the reference box is positioned at the origin of the
+                coordinate system established by the viewBox attribute, and the dimension of the
+                reference box
+                is set to the width and height values of the viewBox attribute.</td>
+        </tr>
+
+
+        <tr>
+            <th> transform-style: </th>
+            <td></td>
+            <td>sets whether children of an element are positioned in the 3D space or are flattened in
+                the plane
+                of the element.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>flat </td>
+            <td>Indicates that the children of the element are lying in the plane of the element itself.
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>preserve-3d</td>
+            <td>Indicates that the children of the element should be positioned in the 3D-space.</td>
+        </tr>
+
+        <tr>
+            <th>text-transform</th>
+            <td></td>
+            <td>specifies how to capitalize an element's text</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>uppercase </td>
+            <td>converts all characters to uppercase.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>lowercase </td>
+            <td>converts all characters to lowercase.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>none </td>
+            <td>prevents the case of all characters from being changed.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>full-width Is </td>
+            <td>forces the writing of a character — mainly ideograms and Latin scripts — inside a
+                square,
+                allowing them to be aligned in the usual East Asian scripts (like Chinese or Japanese).
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>full-size-kana</td>
+            <td>used for &ltruby> annotation text, the keyword converts all small Kana characters to the
+                equivalent full-size Kana, to compensate for legibility issues at the small font sizes
+                typically
+                used in ruby.</td>
+        </tr>
+
+
+
+
+    </table>
+</div>

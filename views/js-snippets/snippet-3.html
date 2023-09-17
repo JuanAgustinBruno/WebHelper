@@ -1,0 +1,163 @@
+<div class="p">
+    <h2>CONDITIONALS</h2>
+    <h3>IF:</h3>
+
+
+    <div class="div__js-inner">
+
+        <code>
+
+            function isEven(num){<br><br>
+
+            if (num % 2 === 0)<br><br>
+            console.log ("even");<br><br>
+            }
+                
+            </code>
+
+    </div>
+
+
+    <h3>ELSE IF:</h3>
+
+
+    <div class="div__js-inner">
+        <code>
+            const age = 9;<br><br>
+
+            if (age < 5){ <br><br>
+            console.log("you get for free") <br><br>
+            } else if (age< 10){ <br><br>
+            console.log("please pay $10") <br><br>
+            } else if (age < 65) { 
+            console.log("please pay $20") <br><br>
+            } 
+        </code>
+    </div>
+
+
+
+
+    <h3>ELSE:</h3>
+    <div class="div__js-inner">
+        <code>
+            const dayOfWeek=prompt("enter a day").toLowerCase(); <br><br>
+            if (dayOfWeek==="monday" ) { <br><br>
+            console.log("i hate mondays") <br><br>
+            } else if (dayOfWeek==="saturday" ){ <br><br>
+            console.log("i love saturdays") <br><br>
+            } else { <br><br>
+            console.log("meh") <br><br>
+            }<br><br>
+        </code>
+    </div>
+
+
+    <h3>Exercise Conditionals "Get Color":</h3>
+
+    <div class="div__js-inner">
+        <code>
+            function getColor(phrase){ <br><br>    
+            if (phrase==="stop" ){ <br><br>
+            console.log("red") <br><br>
+            } else if (phrase==="slow" ){ <br><br>
+            console.log("yellow") }<br><br>
+            else if (phrase==="go" ){ <br><br>
+            console.log("green") <br><br>
+            } else { console.log("purple") <br><br>
+            }<br><br>
+            }<br><br>
+        </code>
+    </div>
+
+    <h3> NESTING:</h3>
+    <div class="div__js-inner">
+        <code>
+            const password = prompt("enter password");<br><br>
+            <br><br>
+            if (password.length >=6) {<br><br>
+                <br><br>
+                &nbspif(password.indexOf(" ") === -1){   // indexOf(" ") means space on the string // -1 means "no match found"<br><br>
+                &nbsp&nbspconsole.log("valid password");<br><br>
+                &nbsp} else {<br><br>
+                    &nbsp&nbspconsole.log("password cannot contain spaces");<br><br>
+                    &nbsp}<br><br>
+            } else {<br><br>
+                &nbspconsole.log("password too short, must contain 6 character")<br><br>
+            }
+     </code>
+
+    </div>
+
+    <h2>&& (and)</h2>
+
+    <div class="div__js-inner">
+        <code>
+            const password = prompt("enter your password");<br><br>
+if (password.length >= 6 && password.indexOf(" ") === -1) { (considers both logics)<br><br> 
+    console.log("valid")<br><br>
+} else {<br><br>
+    console.log("invalid")<br><br>
+}
+        </code>
+    </div>
+    <h2>|| (or)</h2>
+    <div class="div__js-inner">
+        <code>
+           const age = 9;<br><br>
+if (age >= 0 && age < 5 || age >= 65) { (considers one of both logics)<br><br> 
+    console.log("free");<br><br>
+} else if (age >=5 && age < 10) {<br><br>
+    console.log("$10")<br><br>
+} else if (age >= 10 && age < 65) {<br><br>
+    console.log("$20")<br><br>
+} else {<br><br>
+    console.log("invalid")<br><br>
+}<br><br>
+       </code>
+    </div>
+
+    <h2>! (not)</h2>
+   <div class="div__js-inner">
+       <code>
+            let firstName = prompt ("enter your first name");<br><br>
+if (!firstName) {  //meaning entry was false or empty<br><br>
+    firstName = prompt("try again");<br><br>
+}<br><br>
+       </code>
+   </div>
+
+   <h2>Switch:</h2>
+    <p>
+        Will search through the cases and execute when finds the variable. 
+        Without the break it will continue to execute the next ones until the end or a break.
+    </p>
+
+    <div class="div__js-inner">
+
+        <code>
+            const day = 1;<br>
+switch (day){<br><br>
+    case 1:<br><br>
+        console.log("monday");<br>
+        break;<br><br>
+    case 2:<br><br>
+        console.log("tuesday");<br>
+        break;<br><br>
+    case 3:<br><br>
+        console.log("wednesday");<br>
+        break;<br><br>
+    case 4:<br><br>
+        console.log("thursday");<br>
+        break;<br><br>
+    case 5:<br><br>
+        console.log("friday");<br>
+        break;<br><br>
+    case 6:<br><br>
+    case 7:<br><br>
+        console.log("weekend");<br>
+    default:<br><br>
+        console.log("i dont know")  <br><br>
+        </code>
+    </div>                  
+</div>

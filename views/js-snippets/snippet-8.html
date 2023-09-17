@@ -1,0 +1,38 @@
+//keyword THIS<br>
+<br>
+const cat = {<br>
+    name: "Blue Steele",<br>
+    color: "grey",<br>
+    breed: "scottish fold",<br>
+    meow() {<br>
+        console.log("THIS IS:", this)<br>
+        console.log(`${this.name} says MEOWWWWW`);<br>
+    }<br>
+}<br>
+<br>
+//in console<br>
+<br>
+cat.meow()<br>
+THIS IS: {name: 'Blue Steele', color: 'grey', breed: 'scottish fold', meow: ƒ}<br>
+Blue Steele says MEOWWWWW<br>
+<br>
+//exercise 46<br>
+//mi intento<br>
+const hen = {<br>
+    name: "Helen",<br>
+    eggcount: 0 ,<br>
+    layAnEgg() {<br>
+        return (`${this.eggcount + 1}  EGG`)<br>
+    }<br>
+}<br>
+<br>
+//respuesta correcta<br>
+<br>
+const hen = {<br>
+    name: "Helen",<br>
+    eggCount: 0 ,<br>
+    layAnEgg() {<br>
+        this.eggCount += 1;<br>
+        return "EGG";<br>
+    }<br>
+}<br>

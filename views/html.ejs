@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="stylesbox.css">
+    
+    
+    <script defer src="scriptshtml.js"></script>
+    <title>HTML</title>
+</head>
+<body>
+    <div id="wraper">
+        <header> 
+            <h1>HTML</h1>
+        </header>
+    	<div id="innerwraper">
+    
+            <Nav> 
+                <h2>Topics</h2>
+                <button type="button" onclick="window.location.assign('/')" />BACK</button>
+                <!-- Location.assign() Loads the resource at the URL provided in parameter. -->
+                <button type="button" onClick="window.location.reload()"> MAIN </button>
+                <!-- https://www.freecodecamp.org/news/refresh-the-page-in-javascript-js-reload-window-tutorial/#:~:text=How%20to%20Refresh%20a%20Page,method%20responsible%20for%20page%20reloading. -->
+                <button onclick="loadSnippet(1)" id="tags">TAGS</button>
+                <button onclick="loadSnippet(2)" id="inputs">INPUTS</button>
+            </Nav>
+    
+            
+            <div id="box" class="target">
+                <h2>HTML (HyperText Markup Language) </h2>
+                <p>"The most basic building block of the Web"</p>
+                <div >
+                    <div>
+                    
+                    
+                        
+                        <br><br>
+                        <div class="pre_contain">
+                            <h3>Template with standard elements:</h3>
+                            <!-- <pre> -->
+                            &lt!DOCTYPE html><br>
+                            &lthtml lang="en"><br>
+        
+                            &lthead><br>
+                            &nbsp&nbsp&nbsp&nbsp&ltmeta charset="UTF-8"><br>
+                            &nbsp&nbsp&nbsp&nbsp&lttitle>Page Title&lt/title><br>
+                            &nbsp&nbsp&nbsp&nbsp&ltmeta name="viewport" content="width=device-width,initial-scale=1"><br>
+                            &nbsp&nbsp&nbsp&nbsp&ltlink rel="stylesheet" href=""><br>
+                            &nbsp&nbsp&nbsp&nbsp&ltscript src="">&lt/script><br>
+                            &lt/head><br><br>
+                            &ltbody><br>
+                            &nbsp&nbsp&nbsp&nbsp&ltheader><br>
+                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&ltimg src="picture.jpg" alt="picture"><br>
+                            &nbsp&nbsp&nbsp&nbsp&lt/header><br>
+                            &nbsp&nbsp&nbsp&nbsp&ltsection><br>
+                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&ltdiv class=""><br>
+                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&lth1>This is a Heading&lt/h1><br>
+                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&ltp>This is a paragraph.&lt/p><br>
+                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&ltp>This is another
+                            paragraph.&lt/p><br>
+                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&lt/div><br>
+                            &nbsp&nbsp&nbsp&nbsp&lt/section><br>
+                            &lt/body><br>
+                            &lt/html><br><br>
+                           
+                            <!-- </pre>    -->
+                        </div>
+                        <div>
+                            <H3>Table Boilerplate:</H3><br>
+                                <div class="pre_contain">
+                                    <!-- <pre> -->
+            
+            
+                                    &lttable><br>
+                                    &nbsp&nbsp&ltthead><br>
+                                    &nbsp&nbsp&nbsp&nbsp&ltth>&lt/th><br>
+                                    &nbsp&nbsp&lt/thead><br>
+                                    &nbsp&nbsp&lttr><br>
+                                    &nbsp&nbsp&nbsp&nbsp&lttd>&lt/td><br>
+                                    &nbsp&nbsp&nbsp&nbsp&lttd>&lt/td><br>
+                                    &nbsp&nbsp&lt/tr><br>
+                                    &lt/table><br>
+                                    <!-- </pre> -->
+                                </div>
+                        </div>
+        
+                            <div>
+                                <div><br>
+                                    
+                        
+                                    <article>
+                                        <h2>Page Layout:</h2>
+                                        <p class="article"> <img class="float" src="public/layout2.gif" alt="layout2">
+                        
+                                            This is the part of graphic design that deals with the arrangement of visual elements on a page.
+                                            It is used to make the web pages look better while establishes the overall appearance, relative
+                                            importance,
+                                            and relationships between the graphic elements to achieve a smooth flow of information and eye
+                                            movement for maximum effectiveness or impact.
+                                        </p>
+                                    </article>
+                                </div>
+                            </div>
+        
+                    </div>
+                            
+                </div>
+                   
+            </div>
+
+            
+            
+        </div>
+    </div>
+</body>
+</html>

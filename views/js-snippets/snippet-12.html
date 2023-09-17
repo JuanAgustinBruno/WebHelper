@@ -1,0 +1,165 @@
+
+//OBJECT ORIENTED PROGRAMING                                                                                          <br>
+<br>
+//PROTOTYPES<br>
+<br>
+Array.prototype<br>
+String.prototype<br>
+<br>
+//Add a method/function into an array<br>
+<br>
+const arr = [1,2,3]<br>
+<br>
+arr.sing = function() {console.log("lalala")} //assign new function/prototype to the array <br>
+<br>
+<br>
+<br>
+String.prototype.yell = function () {<br>
+    return `omg ${this.toUpperCase()} asdf`<br>
+};<br>
+<br>
+"cat".yell()<br>
+'omg CAT asdf'<br>
+<br>
+<br>
+Array.prototype.pop = function() {<br>
+    return "sorry i wont give u that info";<br>
+};<br>
+<br>
+[1,2,3].pop()<br>
+'sorry i wont give u that info'<br>
+<br>
+//factory function<br>
+<br>
+function makeColor(r, g, b) {<br>
+    const color = {};<br>
+    color.r = r;<br>
+    color.g = g;<br>
+    color.b = b;<br>
+    color.rgb = function() {<br>
+        const { r, g, b } = this;<br>
+        return `rgb(${r}, ${g}, ${b})`;<br>
+    };<br>
+    color.hex = function() {<br>
+        const { r, g, b} = this;<br>
+        return          <br>
+        '#' + ((1 << 24) + (r << 16) + (h << 8) + b) .toString(16).slice(1);<br>
+        <br>
+    };<br>
+    return color;<br>
+}<br>
+<br>
+const firstColor = makeColor(35, 255, 150);<br>
+firstColor.hex();<br>
+<br>
+<br>
+//constructor function<br>
+<br>
+function Color(r, g, b) {<br>
+    this.r = r;<br>
+    this.g = g;<br>
+    this.b = b;<br>
+}<br>
+<br>
+Color.prototype.rgb = function() {<br>
+    const { r, g, b} = this;<br>
+    return<br>
+};<br>
+Color.prototype.hex = function () {<br>
+    const { r, g, b} = this;<br>
+    return '#' + ((1 << 24) + (r << 16) + (g << 8) + b) .toString(16).slice(1);<br>
+    <br>
+};<br>
+Color.prototype.rgba = function (a=1.0) {<br>
+    const { r, g, b} = this;<br>
+    return `rgba(${r}, ${g}, ${a})`<br>
+}<br>
+<br>
+<br>
+<br>
+const Color1 = new Color(40,50,60);<br>
+Color {r: 40, g: 50, b: 60}<br>
+b: 60<br>
+g: 50<br>
+r: 40<br>
+[[Prototype]]: Object<br>
+<br>
+Color1.hex()<br>
+'#28323c'<br>
+<br>
+<br>
+<br>
+//CLASS<br>
+//constructor<br>
+<br>
+//example 1:<br>
+class User {<br>
+    constructor(email, name) {<br>
+        this.email = email;<br>
+        this.name = name;<br>
+    }<br>
+}<br>
+var userOne= new User("ryu@ninjas.com", "Ryu");<br>
+var userTwo= new User("yoshi@mariokorp.com", "Yoshi");<br>
+<br>
+<br>
+//example 2:<br>
+<br>
+class Color {<br>
+    constructor(r,g,b, name) {<br>
+        this.r = r;<br>
+        this.g = g;<br>
+        this.b = b;<br>
+        this.name = name;<br>
+    }<br>
+    innerRGB() {<br>
+        const { r, g, b} = this;<br>
+        return `${r}, ${g}, ${b}`;<br>
+    }<br>
+    rgb(){<br>
+        return  `rgb(${this.innerRGB()})`;<br>
+    }<br>
+    rgba(a = 1.0) {<br>
+        return  `rgba(${this.innerRGB()}, ${a})`;<br>
+    }<br>
+}<br>
+const c1 = new Color(255,67,89, "tomato");<br>
+<br>
+//EXTENDS AND SUPER KEYWORDS<br>
+<br>
+class Pet {<br>
+    constructor(name, age) {<br>
+        this.name = name;<br>
+        this.age = age;<br>
+    }<br>
+    eat(){ //functionality<br>
+        return `${this.name} is eating`;<br>
+    }<br>
+}<br>
+<br>
+class Cat extends Pet { //key "extends" gives access to the Pet class functionality<br>
+    constructor(name, age, livesLeft = 9) {<br>
+        super(name,age); //reference to the super class (in this case Pet)<br>
+        this.livesLeft = livesLeft;<br>
+    }<br>
+    meow() {<br>
+        return "meow";<br>
+    }<br>
+}<br>
+<br>
+class Dog extends Pet {<br>
+    bark() {<br>
+        return "woof";<br>
+    }<br>
+}<br>
+<br>
+const wyatt = new Dog("Wyiatt", 13)<br>
+'Wyiatt is eating'<br>
+<br>
+const fred = new Cat("fred", 13)<br>
+fred<br>
+Cat {name: 'fred', age: 13, livesLeft: 9}<br>
+age: 13<br>
+livesLeft: 9<br>
+name: "fred"<br>
+[[Prototype]]: Pet<br>

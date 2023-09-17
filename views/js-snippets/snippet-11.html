@@ -1,0 +1,587 @@
+//ASYNC     <br><br>                                                                                                                                       <br>
+<p>
+    
+async function fetchFromApi(url){<br>
+<p class="indent">
+    const response = await fetch(url)<br>
+    const json =await response.json()<br>
+    json.forEach(item => console.log(item))<br>
+</p>
+            
+        
+            }
+</p><br><br>
+    
+
+//callstack: is the queue where the processes get stacked and executed 1 by 1, since javascript can just run 1 process at the time.<br>
+//simultaneous operations are handled by timeout settings that organize the process.<br>
+<br>
+//callback<br>
+
+    <br>
+<p>
+    <p>setTimeout(() => {</p>
+        <div class="indent">
+            <p>document.body.style.backgroundColor = "red";</p>
+            <p>setTimeout(() => {</p>
+                <div class="indent">
+                    <p>document.body.style.backgroundColor = "orange";</p>
+                    <p>setTimeout(() => {
+                        <p class="indent">document.body.style.backgroundColor = "yellow";<br><p>
+                    }, 1000)<br>
+                    </p>
+                </div>
+                    
+            <p>}, 1000)</p>
+        </div>
+    }, 1000)<br>
+</p>
+<br>
+<br>
+//------------------------------------------------<br>
+<br><br>
+
+//Promise<br><br>
+
+new Promise( executor: (resolve, reject) => {<br>
+    setTimeout(handler () => {<br>
+        resolve( value: "Ready")<br>
+    }, timeout: 1000)<br>
+})<br>
+    .then(data => console.log(data)) // log Ready<br>
+    .catch(error => console.log(error)) //error<br><br><br>
+
+//example promise<br><br>
+const delayedColorChange = (newColor, delay, doNext) => {<br>
+    setTimeout(() => {<br>
+        document.body.style.backgroundColor = newColor;<br>
+        doNext && doNext();<br>
+    }, delay)<br>
+}<br>
+<br>
+delayedColorChange("red", 1000, () => {<br>
+    delayedColorChange("orange", 1000, () => {<br>
+        delayedColorChange("yellow", 1000, () => {<br>
+            delayedColorChange("green", 1000, () => {<br>
+                delayedColorChange("blue", 1000, () => {<br>
+               <br>
+                })<br>
+            })<br>
+        })<br>
+    })<br>
+})<br>
+<br>
+<br>
+//NESTED PROMISES<br>
+<br>
+<br>
+//callback<br>
+<br>
+const fakeRequestCallback = (url, success, failure) => {<br>
+    const delay = Math.floor(Math.random() * 4500) + 500;<br>
+    setTimeout(() => {<br>
+        if (delay > 4000) {<br>
+            failure('Connection Timeout :(')<br>
+        } else {<br>
+            success(`Here is your fake data from ${url}`)<br>
+        }<br>
+    }, delay)<br>
+}<br>
+<br>
+ fakeRequestCallback('books.com/page1',<br>
+     function (response) {<br>
+         console.log("IT WORKED!!!!")<br>
+         console.log(response)<br>
+         fakeRequestCallback('books.com/page2',<br>
+             function (response) {<br>
+                 console.log("IT WORKED AGAIN!!!!")<br>
+                 console.log(response)<br>
+                 fakeRequestCallback('books.com/page3',<br>
+                     function (response) {<br>
+                         console.log("IT WORKED AGAIN (3rd req)!!!!")<br>
+                         console.log(response)<br>
+                     },<br>
+                     function (err) {<br>
+                         console.log("ERROR (3rd req)!!!", err)<br>
+                     })<br>
+             },<br>
+             function (err) {<br>
+                 console.log("ERROR (2nd req)!!!", err)<br>
+             })<br>
+     }, function (err) {<br>
+         console.log("ERROR!!!", err)<br>
+     })<br>
+<br>
+//promise<br>
+<br>
+<br>
+const fakeRequestPromise = (url) => {<br>
+    return new Promise (resolve, reject) => {<br>
+        const delay = Math.floor(Math.random() * (4500)) +500;<br>
+        setTimeout(() => {<br>
+            if (delay > 4000) {<br>
+                reject("Connection Timeout :(") <br>
+            } else {<br>
+                resolve(`here is your fake data from ${url}`)<br>
+            }<br>
+        }, delay)<br>
+    })<br>
+}<br>
+<br>
+<br>
+//The then() method returns a Promise. It takes up to two arguments: callback functions for the success and failure cases of the Promise.<br>
+<br>
+ fakeRequestPromise('yelp.com/api/coffee/page1')<br>
+     .then(() => {<br>
+         console.log("IT WORKED!!!!!! (page1)")<br>
+         fakeRequestPromise('yelp.com/api/coffee/page2')<br>
+             .then(() => {<br>
+                 console.log("IT WORKED!!!!!! (page2)")<br>
+                 fakeRequestPromise('yelp.com/api/coffee/page3')<br>
+                     .then(() => {<br>
+                         console.log("IT WORKED!!!!!! (page3)")<br>
+                     })<br>
+                     .catch(() => {<br>
+                         console.log("OH NO, ERROR!!! (page3)")<br>
+                     })<br>
+             })<br>
+             .catch(() => {<br>
+                 console.log("OH NO, ERROR!!! (page2)")<br>
+             })<br>
+     })<br>
+     .catch(() => {<br>
+         console.log("OH NO, ERROR!!! (page1)")<br>
+     })<br>
+<br>
+<br>
+<br>
+// THE CLEANEST OPTION WITH THEN/CATCH<br>
+// RETURN A PROMISE FROM .THEN() CALLBACK SO WE CAN CHAIN!<br>
+<br>
+fakeRequestPromise('yelp.com/api/coffee/page1')<br>
+    .then((data) => {<br>
+        console.log("IT WORKED!!!!!! (page1)")<br>
+        console.log(data)<br>
+        return fakeRequestPromise('yelp.com/api/coffee/page2')<br>
+    })<br>
+    .then((data) => {<br>
+        console.log("IT WORKED!!!!!! (page2)")<br>
+        console.log(data)<br>
+        return fakeRequestPromise('yelp.com/api/coffee/page3')<br>
+    })<br>
+    .then((data) => {<br>
+        console.log("IT WORKED!!!!!! (page3)")<br>
+        console.log(data)<br>
+    })<br>
+    .catch((err) => {<br>
+        console.log("OH NO, A REQUEST FAILED!!!")<br>
+        console.log(err)<br>
+    })<br>
+<br>
+<br>
+    //new promises<br>
+<br>
+    new Promise((resolve, reject) => {<br>
+        resolve();<br>
+    })<br>
+<br>
+<br>
+    //example 2<br>
+    const fakeRequest = (url) => {<br>
+        return new Promise((resolve, reject) => {<br>
+            const rand = Math.random();<br>
+            setTimeout(() => {<br>
+                if(rand < 0.7){<br>
+                    resolve("ok");<br>
+                }<br>
+                reject("error");<br>
+            },1000)<br>
+        })<br>
+    }<br>
+    fakeRequest("/dogs/1")<br>
+        .then(() => {<br>
+            console.log("done")<br>
+        })<br>
+    <br>
+<br>
+<br>
+const fakeRequest = (url) => {<br>
+    return new Promise((resolve, reject) => {<br>
+        const rand = Math.random();<br>
+        setTimeout(() => {<br>
+            if(rand < 0.7) {<br>
+                resolve("fake data"); // <----- doesnt work<br>
+            }<br>
+            reject("Request error");<br>
+        },1000)<br>
+    })<br>
+}<br>
+fakeRequest("/dogs/1")<br>
+    .then(() => {<br>
+        console.log("done with request")<br>
+        console.log("data is:", data)<br>
+    })<br>
+    .catch((err) => {<br>
+        console.log("oh no", err)<br>
+    })<br>
+<br>
+//other example<br>
+<br>
+const fakeRequest = (url) => {<br>
+    return new Promise((resolve, reject) => {<br>
+        const rand = Math.random();<br>
+        setTimeout(() => {<br>
+            if(rand < 0.7) {<br>
+                resolve("fake data"); // <----- doesnt work<br>
+            }<br>
+            reject("Request error");<br>
+        },1000)<br>
+    })<br>
+}<br>
+fakeRequest("/dogs/1")<br>
+    .then(() => {<br>
+        console.log("done with request")<br>
+        console.log("data is:", data)<br>
+    })<br>
+    .catch((err) => {<br>
+        console.log("oh no", err)<br>
+    })<br>
+<br>
+//<br>
+//colour example promise<br>
+<br>
+const delayedColorChange = (color, delay) => {<br>
+    return new Promise ((resolve, reject) => {<br>
+        setTimeout(() => {<br>
+            document.body.style.backgroundColor = color;<br>
+            resolve();<br>
+        }, delay)<br>
+    })<br>
+}<br>
+<br>
+delayedColorChange("red, 1000")<br>
+    .then(() => delayedColorChange ("orange", 1000))<br>
+    .then(() => delayedColorChange ("yellow", 1000))<br>
+    .then(() => delayedColorChange ("green", 1000))<br>
+    .then(() => delayedColorChange ("blue", 1000))<br>
+    .then(() => delayedColorChange ("blue", 1000))<br>
+    .then(() => delayedColorChange ("violet", 1000))<br>
+<br>
+<br>
+    //async promise<br>
+<br>
+    async function hello() {<br>
+<br>
+    } <br>
+<br>
+    const sign = async () => {<br>
+        throw "oh no, problem"<br>
+        return "lalala"<br>
+    }<br>
+<br>
+    sign()<br>
+        .then(data => {<br>
+            console.log("promise resolved with:", data)<br>
+        })<br>
+        .catch(err => {<br>
+            console.log("oh no, promise rejected")<br>
+            console.log(err)<br>
+        })<br>
+<br>
+// login example<br>
+<br>
+const login = async (username, password) => {<br>
+    if (!username || !password) throw "missing credentials"<br>
+    if (password === "corgifeetaerecute") return "welcome"<br>
+    throw "invalid password"<br>
+}<br>
+<br>
+login("akjsdhsa", "corgifeetarecute")<br>
+    .then(msg => {<br>
+        console.log("logged in")<br>
+        console.log(msg)<br>
+    })<br>
+    .catch(err => {<br>
+        console.log("error")<br>
+        console.log(err)<br>
+    })<br>
+<br>
+<br>
+//AWAIT keyword<br>
+<br>
+async function rainbow () {<br>
+    await delayedColorChange("red", 1000)<br>
+    await delayedColorChange("orange", 1000)<br>
+    await delayedColorChange("yellow", 1000)<br>
+    await delayedColorChange("green", 1000)<br>
+    await delayedColorChange("blue", 1000)<br>
+    await delayedColorChange("indigo", 1000)<br>
+    await delayedColorChange("violet", 1000)<br>
+    return "all done"<br>
+}<br>
+<br>
+rainbow().then(() => console.log("end of rainbow"))<br>
+<br>
+<br>
+//await fake request example<br>
+<br>
+const fakeRequest = (url) => {<br>
+    return new Promise ((resolve, reject) => {<br>
+        const delay = Math.floor(Math.random() * (4500)) + 500;<br>
+        setTimeout(() => {<br>
+            if (delay > 4000) {<br>
+                reject("conection timeout :(")<br>
+        } else {<br>
+            resolve(`here is your fake data from ${url}`)<br>
+        }<br>
+        }, delay)<br>
+    })<br>
+}<br>
+<br>
+async function makeTwoRequests(){<br>
+    let data1 = await fakeRequest("/page1");<br>
+    console.log(data1);<br>
+}<br>
+<br>
+//handling errors in async functions<br>
+<br>
+async function makeTwoRequests(){<br>
+    try {<br>
+        let data1 = await fakeRequest("/page1");<br>
+        console.log(data1);<br>
+        let data2 = await fakeRequest("/page2");<br>
+        console.log(data2);<br>
+    } catch (e) {<br>
+        console.log("caught an error")<br>
+        console.log("error is:", e)<br>
+    }<br>
+}<br>
+<br>
+makeTwoRequests()<br>
+Promise {<pending>}<br>
+test.js:17 here is your fake data from /page1<br>
+test.js:21 caught an error<br>
+test.js:22 error is: conection timeout :(<br>
+</pending><br>
+<br>
+//ajax = async java script and xml<br>
+//making request on a page that is already loaded<br>
+<br>
+//api = Application Programming Interface (data intermediate app witch sends a json string to convert into javascript)<br>
+api.cryptonator.com/api/ticker/btc-usd<br>
+
+//JSON = java script object notation (object style data)                                                                                                                                           <br>
+<br>
+//JavaScript has a built in function for converting JSON strings into JavaScript objects:<br>
+<br>
+const data = '{"ticker":{"base":"BTC","target":"USD","price":"43820.11439748","volume":"21624.75737334","change":"208.49573222"},"timestamp":1649405165,"success":true,"error":""}'<br>
+<br>
+JSON.parse(data)<br>
+<br>
+{ticker: {…}, timestamp: 1649405165, success: true, error: ''}<br>
+error: ""<br>
+success: true<br>
+ticker:<br>
+base: "BTC"<br>
+change: "208.49573222"<br>
+price: "43820.11439748"<br>
+target: "USD"<br>
+volume: "21624.75737334"<br>
+[[Prototype]]: Object<br>
+timestamp: 1649405165<br>
+[[Prototype]]: Object<br>
+<br>
+<br>
+//JavaScript also has a built in function for converting an object into a JSON string:<br>
+<br>
+JSON.stringify()<br>
+<br>
+const kitchenSink = {favNum: 2412442,material: ["metal", "ceramic"],"warranty":true}<br>
+<br>
+JSON.stringify(kitchenSink)<br>
+'{"favNum":2412442,"material":["metal","ceramic"],"warranty":true}'<br>
+<br>
+//Postman (app for testing api requests)<br>
+//https://www.postman.com/downloads/<br>
+//https://hoppscotch.io/ru (opensource alternative)<br>
+//https://swapi.dev/<br>
+//https://catfact.ninja/<br>
+<br>
+<br>
+<br>
+//HTTP request methods<br>
+CONNECT<br>
+DELETE<br>
+GET<br>
+HEAD<br>
+OPTIONS<br>
+PATCH<br>
+POST<br>
+PUT<br>
+TRACE<br>
+<br>
+//HTTP STATUS CODES<br>
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status<br>
+<br>
+//MAKING XHRs <br>
+<br>
+const req = new XMLHttpRequest();<br>
+<br>
+req.onload = function () {<br>
+    console.log("it loaded");<br>
+    const data = JSON.parse(this.responseText);<br>
+    console.log(data);<br>
+    console.log(data.name , data.height);<br>
+    console.log(this);<br>
+};<br>
+<br>
+req.onerror = function () {<br>
+    console.log("error");<br>
+    console.log(this);<br>
+}<br>
+<br>
+req.open("get", "https://swapi.dev/api/people/1/");<br>
+req.send();<br>
+<br>
+//FETCH<br>
+    <br>
+fetch("https://swapi.dev/api/people/1/")<br>
+    .then((res) => {<br>
+        console.log("resolved", res);<br>
+        return res.json();<br>
+    })<br>
+    .then((data) => {<br>
+        console.log(data);<br>
+    })<br>
+    .catch((e) => {<br>
+        console.log("error", e);<br>
+    })<br>
+<br>
+<br>
+//other example for fetch with async<br>
+<br>
+    const loadStarWarsPeople = async () => {<br>
+        try {<br>
+            const res = await fetch("https://swapi.dev/api/people/1/");<br>
+            const data = await res.json();<br>
+            console.log(data);<br>
+            const res2 = await fetch("https://swapi.dev/api/people/2/");<br>
+            const data2 = await res2.json();<br>
+            console.log(data2);<br>
+        } catch (error) {<br>
+            console.log("error", e);<br>
+        }<br>
+    };<br>
+    loadStarWarsPeople();<br>
+    <br>
+    //ctrl + shift + p ---> surround with snipet try catch<br>
+<br>
+    //AXIOS (not native javascript requests)<br>
+    //library to include in the html<br>
+<br>
+    https://github.com/axios/axios#installing<br>
+<br>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script><br>
+<br>
+axios.get("https://swapi.dev/api/people/1/").then((res) => {<br>
+    console.log("response: ",res);<br>
+})<br>
+.catch(e => {<br>
+    console.log("error", e);<br>
+});<br>
+<br>
+<br>
+<br>
+<br>
+const getStarWarsPerson = async (id) => {<br>
+    try {  <br>
+      const res = await axios.get(`http://swapi.dev/api/people/${id}/`);<br>
+      console.log(res.data);<br>
+    } catch (e) {<br>
+        console.log("error",e);<br>
+    }<br>
+  };<br>
+  <br>
+  getStarWarsPerson(5);<br>
+  getStarWarsPerson(10);<br>
+<br>
+<br>
+<br>
+{/* <h1>hi</h1><br>
+    <button>Click me!</button><br>
+    <ul id="jokes"></ul><br>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script><br>
+    <script src="test.js"></script> */}<br>
+<br>
+<br>
+<br>
+  const jokes = document.querySelector("#jokes");<br>
+  const button = document.querySelector("button");<br>
+  <br>
+  <br>
+  const addNewJoke = async () => {<br>
+      const jokeText = await getDadJoke();<br>
+      const newLI = document.createElement("LI");<br>
+      newLI.append(jokeText);<br>
+      jokes.append(newLI)<br>
+  }<br>
+  <br>
+  <br>
+  const getDadJoke = async () => {<br>
+      try {<br>
+          const config = { headers: { Accept: "application/json" } }<br>
+          const res = await axios.get("https://icanhazdadjoke.com/", config)<br>
+          return res.data.joke;<br>
+      } catch (e) {<br>
+          return "no jokes available"<br>
+      }<br>
+  <br>
+  } <br>
+  button.addEventListener("click", addNewJoke)<br>
+<br>
+<br>
+<br>
+//TV SHOW practice<br>
+<br>
+{/* <head><br>
+    <meta charset="UTF-8"><br>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><br>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><br>
+    <br>
+    <title>Document</title><br>
+<br>
+    <br>
+<br>
+</head><br>
+<body><br>
+    <h1>TV show search</h1><br>
+    <form id="searchForm"><br>
+        <input type="text" placeholder="TV show title" name="query"><br>
+        <button>Search</button><br>
+    </form><br>
+    <br>
+    <br>
+    <script src="test.js"></script> */}<br>
+<br>
+<br>
+<br>
+const form = document.querySelector("#searchForm");<br>
+form.addEventListener("submit", async function (e){<br>
+    e.preventDefault();<br>
+    const searchTerm = form.elements.query.value;<br>
+    const config = { params: { q: searchTerm } }<br>
+    const res = await axios.get(`https://api.tvmaze.com/search/shows`, config);<br>
+    makeImages(res.data)<br>
+    form.elements.query.value = "";<br>
+})<br>
+<br>
+const makeImages = (shows) => {<br>
+    for (let result of shows) {<br>
+        if(result.show.image){<br>
+            const img = document.createElement("IMG");<br>
+            img.src = result.show.image.medium<br>
+            document.body.append(img)<br>
+        }<br>
+        <br>
+    }<br>
+}<br>

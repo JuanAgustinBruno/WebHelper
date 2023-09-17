@@ -1,0 +1,733 @@
+                                                                                                                                            <br>
+//  DOM , Document Object Model<br>
+<br>
+ //on console<br>
+<br>
+ window  =  "represents the browser's window"<br>
+ document = "document object is the owner of all other objects in your web page."<br>
+ console.dir(document) = " displays an interactive list of the properties of the document"<br>
+ document.all = "returns all of the document's elements, accessible by order (like an array) and by ID (like a regular object)."<br>
+<br>
+  //selecting<br>
+<br>
+  getElementById()<br>
+  getElementsByTagName()<br>
+  getElementsByClassName()<br>
+1<br>
+  const example = document.getElementById("example")<br>
+  console.dir(example)<br>
+<br>
+  const allImage = document.getElementsByTagName("img");<br>
+  const allDiv = document.getElementsByTagName("div");<br>
+<br>
+  <img class="square"...></img> ;<br>
+  const squares = document.getElementsByClassName("squares");<br>
+<br>
+<br>
+//querySelector: <br>
+<br>
+//selects the first match.<br>
+//with nth-of-type() selects specific.<br>
+<br>
+<br>
+document.querySelector("h1")  //element<br>
+document.querySelector("#banner") //id<br>
+document.querySelector(".square") //class<br>
+document.querySelector("img:nth-of-type(2)")<br>
+document.querySelector("a")<br>
+document.querySelector("input[type="text"]")<br>
+<br>
+//querySelectorAll:<br>
+<br>
+document.querySelectorAll("p") //all elements of this type<br>
+<br>
+const links = document.querySelectorAll("p a") //selects all a inside p<br>
+for (let link of links) {<br>
+    console.log(link.href) //prints all links on console<br>
+<br>
+}<br>
+<br>
+document.querySelector("html") = document.all<br>
+<br>
+//innerHTML , textContent , innerText<br>
+<br>
+//textContent gets the content of all elements, including <script> and <style> elements<br>
+<br>
+//innerText only shows "human-readable" elements  and won't return the text of "hidden" elements.<br>
+<br>
+//innerHTML gets or sets the HTML or XML markup contained within the element.<br>
+//To insert the HTML into the document rather than replace the contents of an element, use the method insertAdjacentHTML()<br>
+example: <br>
+document.querySelector("h1").innerHTML = "<i>asdasd</i>"<br>
+<br>
+//innerText (text modified)<br>
+document.querySelector("span").innerText = "Disgusting"<br>
+<br>
+//personal attempt exercise 53<br>
+const span = document.getElementById("span");<br>
+span.textContent = "Disgusting";<br>
+<br>
+console.log("hola");<br>
+}<br>
+<br>
+changeText()   <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+//querySelector Practice<br>
+const doneTodos = document.querySelectorAll(".done")<br>
+const checkbox = document.querySelector("#scales")<br>
+<br>
+<br>
+<br>
+//attributes<br>
+<br>
+document.querySelector("a").href <br>
+document.querySelector("a").id = "asdasd"<br>
+document.querySelector("a").src<br>
+<br>
+const rdLink = document.querySelector("a:nth-of-type(3)");<br>
+rdLink.href //gets attribute from the javascript file<br>
+'https://en.wikipedia.org/wiki/Chooks_(disambiguation)'<br>
+rdLink.getAttribute("href") //gets attribute from inside the HTML tag<br>
+'/wiki/Chooks_(disambiguation)'<br>
+<br>
+rdLink.setAttribute("href", "http://www.google.com") //modified on the html markup<br>
+<br>
+const input = document.querySelector("input[type="text"]")<br>
+input.type<br>
+"text"<br>
+input.type="password"<br>
+"password"<br>
+input.type="color"<br>
+"color" //color picker<br>
+<br>
+//exercise 54<br>
+<br>
+const chicken = document.querySelector("img");<br>
+chicken.src= 'https://devsprouthosting.com/images/chicken.jpg';<br>
+chicken.setAttribute("alt","chicken");<br>
+<br>
+//change style (on console)<br>
+<br>
+const h1 = document.querySelector("h1");<br>
+<br>
+h1.style.color ="green"<br>
+h1.style.fontSize = "3em"<br>
+h1.style.border = "2px solid"<br>
+<br>
+<br>
+window.getComputedStyle(h1).marginLeft //returns css style declaration<br>
+<br>
+//Remember to use camelCased property names in JavaScript! (backgroundColor, not background-color, etc.)<br>
+<br>
+//on javascript doc<br>
+<br>
+const allLinks = document.querySelectorAll("a");<br>
+for (let link of allLinks) {<br>
+    link.style.color = "cyan"<br>
+}<br>
+ <br>
+//exercise 55<br>
+<br>
+const container = document.querySelector("#container");<br>
+container.style.textAlign = "center";<br>
+const img = document.querySelector("img");<br>
+img.style.width = "150px";<br>
+img.style.borderRadius = "50%";<br>
+<br>
+<br>
+//exercise 56<br>
+const spans = document.querySelectorAll("h1 span");<br>
+//solution 1<br>
+<br>
+for (let i = 0; i < spans.length; i++) {<br>
+    spans[i].style.color= colors[i];<br>
+}<br>
+<br>
+//solution 2 (dont work on the platform)<br>
+<br>
+spans.forEach((span, index) => {<br>
+    span.style.color = colors[index]<br>
+}<br>
+)<br>
+<br>
+//solution 3<br>
+<br>
+let i = 0;<br>
+for (const span of spans) {<br>
+    span.style.color = colors[i];<br>
+    i++;<br>
+}<br>
+<br>
+<br>
+//ClassList (console) (for css class)<br>
+<br>
+<br>
+const h2 = document.querySelector("h2");<br>
+<br>
+h2.classList //displays DOMTokenList of selection<br>
+<br>
+h2.getAttribute("class")<br>
+h2.setAttribute("class", "nameOfTheClass")<br>
+<br>
+//adds new class, instead of replacing<br>
+<br>
+let currentClasses = h2.getAttribute("class")<br>
+currentClasses<br>
+"border"<br>
+<br>
+h2.setAttribute("class", `${currentClasses} purple`) <br>
+<br>
+<br>
+<br>
+//class method<br>
+h2.classList.add("purple") //apply an existing class to the selected element.<br>
+h2.classList.add("border") //class can be added without replacing current ones<br>
+<br>
+h2.classList.remove("border") //removes the specified class<br>
+<br>
+<br>
+h2.classList.toggle("purple") //swiches from true and false<br>
+<br>
+//exercise 57<br>
+//solution 1<br>
+const lis = document.querySelectorAll("li");<br>
+<br>
+for (let i = 0; i < lis.length; i++) {<br>
+    if (lis[i].classList.contains("highlight")){<br>
+        lis[i].classList.remove("highlight");<br>
+    } else {<br>
+        lis[i].classList.add("highlight");<br>
+    }<br>
+}<br>
+<br>
+//solution 2<br>
+<br>
+const lis = document.querySelectorAll("li");<br>
+<br>
+for (let i = 0; i < lis.length; i++) {<br>
+    lis[i].classList.toggle("highlight")<br>
+}<br>
+<br>
+//solution 3<br>
+<br>
+lis.forEach(li => {<br>
+    li.classList.toggle("highlight")<br>
+})<br>
+<br>
+//solution 4<br>
+<br>
+for (const li of lis) {<br>
+    li.classList.toggle("highlight")<br>
+}<br>
+<br>
+<br>
+// traversing parent child sibiling<br>
+<br>
+const firstBold = document.querySelector("b")<br>
+<br>
+firstBold.parentElement<br>
+// <p>...</p> displays the parent element of the bold element selected with the querySelector<br>
+<br>
+const paragraph = firstBold.parentElement<br>
+paragraph.children<br>
+//HTMLCollection(8) [b,b,a,a,a,a] displays the collection of childrens under that element<br>
+paragraph.children[0]<br>
+//<b>Silkie</b><br>
+<br>
+//squareImg.nextSibiling //displays the inmediate content after the element, including blank space, represented as a #text<br>
+//squareImg.previousSibiling the //inmediate content before the element<br>
+//squareImg.nextElementSibiling //displays the inmediate Element after it<br>
+//squareImg.previousElementSibiling //the inmediate element before<br>
+<br>
+<br>
+//append <br>
+<br>
+//adding new content to the docume t<br>
+document.createElement("img")<br>
+const newImg = document.createElement("img")<br>
+newImg.src= "www.link.com/photo"<br>
+document.body.appendChild(newImg)<br>
+<br>
+const newH3 = document.createElement("h3") //creates a new element<br>
+newH3.innerText = "I am new" //add content to the element<br>
+document.body.appendChild(newH3) //adds the element to the document<br>
+<br>
+const p = document.querySelector("p")<br>
+p.append ("i am new text")<br>
+<br>
+//prepend<br>
+const newB = document.createElement("b")<br>
+newB.append("hi")<br>
+newB<br>
+//<b>hi</b><br>
+p.prepend(newB) //sends the element to the beginning of the text or section<br>
+<br>
+// positioning<br>
+const h2 = document.createElement("h2") //create a new element<br>
+h2.append("lalala") //asign content<br>
+const h1 = document.querySelector("h1") //create a variable containing the specified selection<br>
+<br>
+h1.insertAdjacentElement("afterend", "h2") //place the h2 after the selected h1<br>
+//other options<br>
+"beforebegin"<br>
+"afterbegin"<br>
+"beforeend"<br>
+<br>
+const h3 = document.createElement ("h3") //creates<br>
+h3.innerText = "I am h3"; //add text<br>
+h1.after(h3) //place it after the h1<br>
+<br>
+//exercise 58<br>
+<br>
+const containerDiv = document.querySelector("#container")<br>
+<br>
+for (let i = 0; i < 100; i++) {<br>
+    const button = document.createElement("button");<br>
+    button.innerText = "Hey!";<br>
+    containerDiv.appendChild(button);<br>
+}<br>
+<br>
+//removeChild<br>
+<br>
+const firstLi = document.querySelector("li");<br>
+<br>
+const ul = firstLi.parentElement;<br>
+<br>
+ul.removeChild(firstLi);<br>
+<br>
+<br>
+const li = document.querySelector("li");<br>
+li.parentElement.removeChild(li);<br>
+<br>
+<br>
+//remove <br>
+<br>
+const img = document.querySelector("img")<br>
+img.remove()<br>
+<br>
+// other variant<br>
+<br>
+img.parentElement.removeChild(img)<br>
+<br>
+//pokemon example<br>
+<br>
+const container = document.querySelector("#container");<br>
+const baseURL = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"<br>
+<br>
+<br>
+for (let i = 1; i < 151; i++) {<br>
+    const pokemon = document.createElement("div");<br>
+    pokemon.classList.add("pokemon");<br>
+    const label = document.createElement("span");<br>
+    label.innerText = `#${i}`;<br>
+    const newImg = document.createElement("img");<br>
+    newImg.src = `${baseURL}${i}.png`<br>
+    <br>
+    pokemon.appendChild(newImg);<br>
+    pokemon.appendChild(label);<br>
+    container.appendChild(pokemon)<br>
+<br>
+}<br>
+<br>
+<br>
+<br>
+<br>
+//EVENTS (user interaction) <br>
+<br>
+// https://developer.mozilla.org/en-US/docs/Web/API/element<br>
+// https://developer.mozilla.org/en-US/docs/Web/events<br>
+<br>
+//https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener<br>
+<br>
+//inline events<br>
+//exercise 59<br>
+<br>
+<h1 onclick= "console.log('boo');">Inline Events Suck...</h1><br>
+<button onclick= "console.log('clicked');" id="btn">Click Me</button><br>
+<br>
+<br>
+<br>
+//on click<br>
+    <br>
+    //html<br>
+<br>
+/* <!DOCTYPE html><br>
+<html lang="en"><br>
+<head><br>
+    <br>
+    <title>Document</title><br>
+</head><br>
+<body><br>
+    <h1>events</h1><br>
+    <button id="v2">click me</button><br>
+    <button id="v3">click me 3</button><br>
+    <button id="tas">twist & shout</button><br>
+<br>
+    <script src="test.js"></script>    <br>
+<br>
+    <button onclick="alert('you clicked'); alert('stop')"> click </button>  //inline example on the html<br>
+<br>
+</body><br>
+<br>
+</html> */<br>
+    <br>
+    {/* //javascript */}<br>
+<br>
+const btn = document.querySelector("#v2")<br>
+btn.onclick = function () {<br>
+    console.log("you clicked me")<br>
+    console.log("i hope it worked")<br>
+}<br>
+    {/* //onmouseenter */}<br>
+<br>
+function scream() {<br>
+    console.log("aaah");<br>
+    console.log("stop touching me");<br>
+<br>
+}<br>
+<br>
+btn.onmouseenter = scream;<br>
+<br>
+document.querySelector("h1").onclick = () => {<br>
+    alert("you ckicked the h1")<br>
+}<br>
+<br>
+//addEventListener<br>
+<br>
+const btn3 = document.querySelector("#v3");<br>
+btn3.addEventListener("click", function(){<br>
+    alert("clicked")<br>
+})<br>
+<br>
+function twist() {<br>
+    console.log("twist")<br>
+}<br>
+<br>
+function shout() {<br>
+    console.log("shout")<br>
+}<br>
+<br>
+const tasButton = document.querySelector ("#tas");<br>
+tasButton.addEventListener("click",twist { once: true }) //will run just 1 time<br>
+tasButton.addEventListener("click",shout)<br>
+<br>
+<br>
+//exercise 60<br>
+<br>
+const hi = document.querySelector("#hello");<br>
+const bye = document.querySelector("#goodbye");<br>
+<br>
+<br>
+hi.addEventListener("click", function(){ <br>
+    console.log("hello")});<br>
+        <br>
+bye.addEventListener("click", function(){<br>
+    console.log("goodbye")});<br>
+<br>
+<br>
+{/* // Random color */}<br>
+<br>
+/* <body><br>
+    <h1>hi</h1><br>
+    <button>Click</button><br>
+<br>
+<br>
+    <script src="test.js"></script>    <br>
+<br>
+</body> */<br>
+<br>
+<br>
+<br>
+const button = document.querySelector("button");<br>
+const h1 = document.querySelector("h1");<br>
+<br>
+<br>
+button.addEventListener("click", function(){<br>
+    <br>
+    const r = Math.floor(Math.random() * 255);<br>
+    const g = Math.floor(Math.random() * 255);<br>
+    const b = Math.floor(Math.random() * 255);<br>
+    const newColor = `rgb(${r}, ${g}, ${b})`<br>
+    document.body.style.backgroundColor = newColor;<br>
+    h1.innerText = newColor;<br>
+})<br>
+<br>
+<br>
+<br>
+<br>
+{/* //independent function for make new color */}<br>
+<br>
+<br>
+<br>
+button.addEventListener("click", function(){<br>
+    const newColor = makeRandColor();<br>
+    document.body.style.backgroundColor = newColor;<br>
+    h1.innerText = newColor;<br>
+})<br>
+<br>
+const makeRandomColor = () => {<br>
+    const r = Math.floor(Math.random() * 255);<br>
+    const g = Math.floor(Math.random() * 255);<br>
+    const b = Math.floor(Math.random() * 255);<br>
+    return  `rgb(${r}, ${g}, ${b})`;<br>
+}<br>
+<br>
+<br>
+{/* /*  EVENTS KEYWORD THIS */ */}<br>
+<br>
+// KEYWORD THIS<br>
+<br>
+const buttons = document.querySelectorAll('button');<br>
+for (let button of buttons) {<br>
+    button.addEventListener( "click" ,colorize)<br>
+}<br>
+<br>
+const h1s = document.querySelectorAll("h1");<br>
+for (let h1 of h1s) {<br>
+    h1.addEventListener("click", colorize)<br>
+}<br>
+<br>
+function colorize() {<br>
+    this.style.backgroundColor = makeRandomColor();<br>
+    this.style.color = makeRandomColor();<br>
+}<br>
+<br>
+//keyboard events<br>
+<br>
+<br>
+document.querySelector("button").addEventListener("click", function(evt){<br>
+    console.log(evt)<br>
+})<br>
+<br>
+const input = document.querySelector("input");<br>
+input.addEventListener("keydown", function(e) {<br>
+    console.log(e.key)<br>
+    console.log(e.code)<br>
+})<br>
+<br>
+/* input.addEventListener("keyup", function() {<br>
+    console.log("KEYUP")<br>
+}) */<br>
+<br>
+/* <br>
+window.addEventListener("keydown", function (e) {<br>
+    console.log(e.code)<br>
+}) */<br>
+<br>
+window.addEventListener("keydown", function (e) {<br>
+    switch (e.code){<br>
+        case "ArrowUp":   <br>
+            console.log("up")<br>
+            break;<br>
+        case "ArrowDown":   <br>
+            console.log("down")<br>
+            break;<br>
+        case "ArrowLeft":   <br>
+            console.log("left")<br>
+            break;<br>
+        case "ArrowRight":   <br>
+            console.log("right")<br>
+            break;<br>
+        default:<br>
+            console.log("ignored")<br>
+    }<br>
+})<br>
+<br>
+<br>
+//form events prevent default<br>
+<br>
+const form = document.querySelector("#shelterForm");<br>
+form.addEventListener("submit", function (e) {<br>
+    e.preventDefault();<br>
+    console.log("submitted")<br>
+})<br>
+<br>
+/* <br>
+<h1>form</h1><br>
+    <form action="/shelter" id="shelterForm"><br>
+        <input type="text" /><br>
+        <button>Submit</button><br>
+    </form>   */<br>
+<br>
+<br>
+//PRACTICE with FORM EVENTS<br>
+<br>
+<br>
+/* <br>
+    <h1>form</h1><br>
+    <form action="/shelter" id="shelterForm"><br>
+        <input type="text" id="catName"><br>
+        <button>Submit</button><br>
+    </form>   <br>
+    <h2>Available Cats</h2><br>
+    <ul id="cats"></ul> <br>
+*/<br>
+<br>
+    const form = document.querySelector("#shelterForm");<br>
+    const input = document.querySelector("#catName");<br>
+    const list = document.querySelector("#cats");<br>
+    form.addEventListener("submit", function (e) {<br>
+        e.preventDefault();<br>
+        console.log(input.value) <br>
+        <br>
+        const catName = input.value;<br>
+        const newLI = document.createElement("LI");<br>
+        newLI.innerText = catName;<br>
+        list.append(newLI);<br>
+    <br>
+    })<br>
+    <br>
+//PRACTICE FORM EVENTS OLD VERSION RESET INPUT<br>
+<br>
+/*<br>
+<h1>form</h1><br>
+<form action="/tweetpage" id="tweetForm"><br>
+    <input type="text" name="username" placeholder="username"><br>
+    <input type="text" name="tweet" placeholder="tweet"><br>
+    <button>Submit</button><br>
+</form>   <br>
+<h2>tweets</h2><br>
+<ul id="tweets"></ul><br>
+<script src="test.js"></script> <br>
+*/<br>
+<br>
+<br>
+<br>
+<br>
+//EXERCISE 61<br>
+//My attepmt (not working on udemy)<br>
+{/* <br>
+<h1>Grocery List</h1><br>
+    <form action="/nowhere" id="grocery"><br>
+        <label for="item">Enter A Product</label><br>
+        <input type="text" id="product" name="product"><br>
+        <label for="item">Enter A Quantity</label><br>
+        <input type="number" id="qty" name="qty"><br>
+        <button>Submit</button><br>
+    </form><br>
+<br>
+    <ul id="list"></ul><br>
+*/}<br>
+const groceryForm = document.querySelector("#grocery");<br>
+<br>
+const groceryContainer = document.querySelector("#list");<br>
+<br>
+groceryForm.addEventListener("submit", function(e) {<br>
+    e.preventDefault();<br>
+<br>
+    const productInput = groceryForm.elements.product;<br>
+    const qtyInput = groceryForm.elements.qty;<br>
+<br>
+    addProduct(productInput.value, qtyInput.value);<br>
+    productInput.value = "";<br>
+    qtyInput.value = "";<br>
+})<br>
+<br>
+const addProduct = (product, qty) => {<br>
+    const newProduct = document.createElement("li");<br>
+    newProduct.append(product," ", qty);<br>
+    groceryContainer.append(newProduct);<br>
+};<br>
+<br>
+//youtube solution workinng on udemy<br>
+<br>
+const form = document.querySelector('form');<br>
+const ul = document.querySelector("#list")<br>
+<br>
+<br>
+form.addEventListener("submit", (e) => {<br>
+    e.preventDefault();<br>
+    const quantity = document.querySelector("#qty");<br>
+    const product = document.querySelector("#product");<br>
+<br>
+    const li = document.createElement("li")<br>
+    li.innerText= `${quantity.value} ${product.value}`<br>
+<br>
+    ul.appendChild(li);<br>
+<br>
+    quantity.value = "";<br>
+    product.value = "";<br>
+})<br>
+<br>
+<br>
+//input & change events <br>
+<br>
+/* <br>
+<h1></h1><br>
+<input type="text"></input><br>
+ */<br>
+<br>
+const input = document.querySelector("input")<br>
+const h1 = document.querySelector("h1")<br>
+<br>
+input.addEventListener("input", function (e) { //input event<br>
+    h1.innerText = input.value; //will update h1 as soon as its typed down<br>
+    console.log("input event")<br>
+    console.log(e)<br>
+})<br>
+<br>
+//exercise 62<br>
+<br>
+const h1 = document.querySelector("h1");<br>
+const input = document.querySelector("input");<br>
+<br>
+input.addEventListener("input", (e) => {<br>
+    if (e.target.value === "") {<br>
+        h1.innerText = "Enter Your Username"<br>
+    } else {<br>
+        h1.innerText = `Welcome, ${e.target.value}`<br>
+    }<br>
+})<br>
+<br>
+//event bubbling <br>
+<br>
+const button = document.querySelector("#changeColor");<br>
+const container = document.querySelector("#container");<br>
+<br>
+button.addEventListener("click", function() {<br>
+    container.style.backgroundColor = makeRandomColor();<br>
+    e.stopPropagation(); //will stop bubbling effect on events<br>
+})<br>
+<br>
+container.addEventListener("click", function() {<br>
+    container.classList.toggle("hide"); //will hide the element<br>
+})<br>
+<br>
+const makeRandomColor = () => {<br>
+    const r = Math.floor(Math.random() * 255);<br>
+    const g = Math.floor(Math.random() * 255);<br>
+    const b = Math.floor(Math.random() * 255);<br>
+    return  `rgb(${r}, ${g}, ${b})`;<br>
+}<br>
+<br>
+//event delegation<br>
+<br>
+const tweetForm = document.querySelector("#tweetForm");<br>
+const tweetsContainer = document.querySelector("#tweets")<br>
+tweetForm.addEventListener("submit", function (e) {  <br>
+    e.preventDefault();<br>
+    const usernameInput = tweetForm.elements.username;<br>
+    const tweetInput = tweetForm.elements.tweet;<br>
+<br>
+    addTweet(usernameInput.value, tweetInput.value);<br>
+    usernameInput.value = "";<br>
+    tweetInput.value = "";<br>
+})<br>
+<br>
+    const addTweet = (username, tweet) => {<br>
+        const newTweet = document.createElement("li");<br>
+        const bTag = document.createElement("b");<br>
+        bTag.append(username);<br>
+        newTweet.append(bTag);<br>
+        newTweet.append(` - ${tweet}`);<br>
+        tweetsContainer.append(newTweet);<br>
+    }<br>
+<br>
+tweetsContainer.addEventListener("click", function (e) {<br>
+    e.target.nodeName === "LI" && e.target.remove();  //will remove only "li" elements<br>
+})<br>

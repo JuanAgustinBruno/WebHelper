@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesbox.css">
+    <script defer src="scriptscss.js"></script>
+    <title>HTML</title>
+</head>
+<body>
+    <div id="wraper">
+        <header> 
+            <h1>CSS</h1>
+        </header>
+    	<div id="innerwraper">
+    
+            <Nav> 
+                <button onclick="window.location.assign('/')" />BACK</button>
+                <button onClick="window.location.reload()"> MAIN </button>
+                <button onclick="loadSnippet(1)" id="cssbtn">SELECTORS</button>
+                <button onclick="loadSnippet(2)" id="cssbtn">PSEUDO CLASES</button>
+                <button onclick="loadSnippet(3)" id="cssbtn">PSEUDO ELEMENTS</button>
+                <button onclick="loadSnippet(4)" id="cssbtn">MEDIA QUERIES</button>
+                <button onclick="loadSnippet(5)" id="cssbtn">UNITS</button>
+                <button onclick="loadSnippet(6)" id="cssbtn">POSITION</button>
+                <button onclick="loadSnippet(7)" id="cssbtn">DISPLAY</button>
+                <button onclick="loadSnippet(8)" id="cssbtn">BOX-MODEL</button>
+                <button onclick="loadSnippet(9)" id="cssbtn">FLEX</button>
+                <button onclick="loadSnippet(10)" id="cssbtn">TRANSFORM</button>
+                <button onclick="loadSnippet(11)" id="cssbtn">TRANSITION</button>
+                <button onclick="loadSnippet(12)" id="cssbtn">BACKGROUND</button>
+                <button onclick="loadSnippet(13)" id="cssbtn">TEXT</button>
+                <button onclick="loadSnippet(14)" id="cssbtn">BORDER</button>
+                
+            </Nav>
+    
+            
+            <div id="box" class="target">
+                <h1>Cascading Style Sheets (CSS)</h1>
+                <div class="main_box">
+
+                    <div>
+                        
+                        <div class="content_box">
+                            <h2>Including styles on HTML document:</h2>
+                            <ul>
+                                <li>On head:<span style="color: rgb(141, 141, 245); "> &ltlink rel="stylesheet" href="stylesbox.css"></span></li>
+                                <li>On body:<span style="color: rgb(141, 141, 245); "> &ltstyle> div { display: flex; } &lt/style></span></li>
+                                <li>Inline on element:<span style="color: rgb(141, 141, 245); "> &ltdiv style="display: block;"> </span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="content_box">
+                        <h1>Cascade Layering</h1>
+                        <img src="public/cascade.png" alt="">
+                        <div><a href="https://css-tricks.com/css-cascade-layers/" target="_blank">SOURCE</a></div>
+                        <div><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade" target="_blank">MDN</a></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesbox.css">
+</head>
+<body>
+
+    <div id="wraper">
+        <header> 
+            <h1>NODEJS</h1>
+        </header>
+    	<div id="innerwraper">
+    
+            <Nav> 
+                <h2>Topics</h2>
+                <button onclick="window.location.assign('/')" />BACK</button>
+                <button onClick="window.location.reload()"> MAIN </button>
+                
+            </Nav>
+    
+            
+                <div id="box" class="target">
+                    <div class="topic">
+                        <h1 id="nodejs">NODE JS</h1>
+                
+                        <div class="p">
+                            <h2>Description:</h2>
+                            <p> Node.js lets developers use JavaScript to write command line tools and for server-side
+                                scripting to produce dynamic web page content before the page is
+                                sent to the user's web browser. <br><br>
+                
+                
+                                <a href="https://en.wikipedia.org/wiki/Node.js" target="_blank"> Wiki: NODE</a>
+                            </p>
+                        </div>
+                
+                
+                
+                
+                
+                        <h2>TERMINAL Git Bash </h2>
+                
+                        <div class="p">
+                            <table>
+                
+                
+                                <tr>
+                                    <th>commands:</th>
+                                </tr>
+                                <tr>
+                                    <td>mkdir : </td>
+                                    <td>creates new folder</td>
+                                </tr>
+                                <tr>
+                                    <td>mkdir ../ : </td>
+                                    <td>creates folder upwards</td>
+                                </tr>
+                                <tr>
+                                    <td>touch </td>
+                                    <td>files will be created on the directory</td>
+                                </tr>
+                                <tr>
+                                    <td>rm </td>
+                                    <td>permanently remove selected files</td>
+                                </tr>
+                                <tr>
+                                    <td>rmdir </td>
+                                    <td>removes empty folders</td>
+                                </tr>
+                                <tr>
+                                    <td>rm -rf </td>
+                                    <td>removes all</td>
+                                </tr>
+                
+                                <tr>
+                                    <td>ls: </td>
+                                    <td>stands for "list", similar to "dir"</td>
+                                </tr>
+                                <tr>
+                                    <td>pwd: </td>
+                                    <td>"print working directory"</td>
+                                </tr>
+                                <tr>
+                                    <td>cd : </td>
+                                    <td>"change directory"</td>
+                                </tr>
+                                <tr>
+                                    <td>cd .. : </td>
+                                    <td> backwards</td>
+                                </tr>
+                                <tr>
+                                    <td>cd ~ : </td>
+                                    <td> home directory</td>
+                                </tr>
+                                <tr>
+                                    <td>cd / : </td>
+                                    <td>root directory</td>
+                                </tr>
+                                <tr>
+                                    <td>cd c/: </td>
+                                    <td>to C </td>
+                                </tr>
+                                <tr>
+                                    <td>cd ../../Pets : </td>
+                                    <td>backs out to the directory required, relative path</td>
+                                </tr>
+                                <tr>
+                                    <td>absolute path: </td>
+                                    <td>cd /Users/coltsteele </td>
+                                </tr>
+                                <tr>
+                                    <td>explorer . : </td>
+                                    <td>open the instalation folder of git bash</td>
+                                </tr>
+                
+                                <tr>
+                                    <td>"command" --help</td>
+                                    <td>command list</td>
+                                </tr>
+                            </table>
+                
+                            <h3>Create new files:</h3>
+                            <p>Touch index.html app.css app.js files will be created on the directory</p>
+                        </div>
+                
+                
+                
+                
+                        <div class="p">
+                            <h2>Code index.js to load index.html and resources</h2>
+                            <div class="div__js-inner">
+                                <code>
+                                    const express = require('express');<br><br>
+                                    const app = express();<br><br>
+                                    const router = express.Router();<br><br>
+                                    
+                                    app.use('/public', express.static('./public'));<br><br>
+                                    
+                                    app.get('/',function(req,res) {<br><br>
+                                        res.sendFile(__dirname + '/index.html');<br>
+                                    });<br><br>
+                                    
+                                    router.get('/', (req,res) => {<br><br>
+                                        const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;<br><br>
+                                        console.log(ip); // ip address of the user<br>
+                                    });<br><br>
+                                    
+                                    app.use('/', router);<br><br><br><br>
+                                    
+                                    
+                                    app.listen(80, () => {<br><br>
+                                        console.log('Serving on port 80')<br>
+                                    })<br><br>
+                                
+                                </code>
+                            </div>
+                        </div>
+                
+                
+                
+                        <h2>WEB SERVER:</h2>
+                        <div class="p">
+                            <ul>
+                                <h2>Starting server:</h2>
+                                <ol>
+                                    <h5>LOCAL:</h5>
+                                    <li>Open Git Bash</li>
+                                    <li>Set directory to the index.js</li>
+                                    <li>Execute it with NODEMON</li>
+                                    <br>
+                                    <br>
+                                    <img src="public/StartServerNODE.jpg">
+                                </ol><br>
+                
+                
+                                <ol>
+                                    <h5>ONLINE (with Ngrok):</h5>
+                                    <li>Open CMD as admin</li>
+                                    <li>Set directory to Ngrok.exe</li>
+                                    <li>Execute ngrok HTTP 80</li>
+                                    <br>
+                                    <br>
+                                    <img src="public/NgrokEXE.jpg"><br><br>
+                                    <img src="public/NgrokHTTP80.jpg"><br><br>
+                                    <img src="public/ServerUP.jpg"><br><br>
+                                </ol>
+                
+                
+                            </ul>
+                        </div>
+                
+                
+                
+                
+                
+                
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+    
+</body>
+</html>

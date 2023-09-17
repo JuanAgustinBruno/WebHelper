@@ -1,0 +1,156 @@
+<h2>OBJECTS</h2>
+                    <p>The Object type represents one of JavaScript's data types. It is used to store various keyed collections and more complex entities</p>
+                <div class="div__js-inner">
+                        <code>
+                    
+                    //example:<br><br>
+                    const kitchenSink = {<br><br>
+                        favNum: 2412442,<br><br>
+                        material: ["metal", "ceramic"],<br><br>
+                        warranty: true<br><br>
+                    }<br><br><br><br>
+        
+                    const user = {name:"agustin",surename:"bruno"} <span class="clr-comment">//variable data enclosed with curly brackets {}</span><br><br><br><br>
+        
+                    //exercise<br><br>
+                    const product = {name:"Gummy Bears",inStock:true,price:1.99,flavors:["grape","apple","cherry"]}<br><br><br><br>
+        
+                    //extract data from objects<br><br>
+                    const years = {1999:"good", 2020:"bad"};<br><br><br><br>
+        
+                    years["1999"]<br><br>
+                    "good"<br><br><br><br>
+        
+                    years[1999]<br><br>
+                    "good"<br><br><br><br>
+        
+                    const happy= {birthday:"today",newyear:"yesterday"};<br><br><br><br>
+        
+                    happy.birthday<br><br>
+                    'today'<br><br><br><br>
+                    
+                    Create objects:<br><br>
+                    
+                    With functions:<br><br>
+
+                    function User(name, surname) {<br>
+                        this.name = lastName<br>
+                        this.surname = surname<br>
+                    }<br><br>
+
+                    const user = new User( name: "ulbi", surname: "tv")<br>
+                    console.log(user) //User  name: "ulbi", surname: "tv"<br><br>
+
+                    With class:<br><br>
+
+                    class User {<br>
+                        constructor(name, surname) {<br>
+                            this.name = name <br>
+                            this.surname = surname<br>
+                        }<br>
+                    }<br><br>
+
+                    const user = new User (name: "ulbi", surname: "tv")<br>
+                    console.log(user) //User {name: "ulbi", surname: "tv"}<br><br>
+
+                    
+
+
+                    //EXERCISE <br><br><br><br>
+        
+                    const restaurant = {<br><br>
+                        name: 'Ichiran Ramen',<br><br>
+                        address: `${Math.floor(Math.random() * 100) + 1} Johnson Ave`,<br><br>
+                        city: 'Brooklyn',<br><br>
+                        state: 'NY',<br><br>
+                        zipcode: '11206',<br><br>
+                    }<br><br><br><br>
+        
+                    const fullAddress = restaurant.address+ restaurant.city+ restaurant.state+ restaurant.zipcode<br><br><br><br>
+        
+                    '90 Johnson AveBrooklynNY11206'<br><br><br><br>
+        
+                    //MODIFYING OBJECTS<br><br><br><br>
+        
+                    const midterms = {danielle:96, thomas:78}<br><br>
+                    midterms.thomas = 79 <span class="clr-comment">//modified score to 79</span><br><br>
+                    midterms.ezra<br><br>
+                    midterms.ezra = 60<br><br>
+                    midterms["antonio"]<br><br>
+                    midterms["antonio"] = 100<br><br>
+                    midterms<br><br>
+                    {danielle: 96, thomas: 79, ezra: 60, antonio: 100}<br><br><br><br>
+        
+                    //OBJECTS & ARRAY NESTING<br><br><br><br>
+        
+                    const shoppingCart= [<br><br>
+                        {<br><br>
+                            product: "jenga classic",<br><br>
+                            price: 6.88,<br><br>
+                            quantity: 1,<br><br>
+                        
+                        }<br><br>
+                        {<br><br>
+                            product: "Echo Dot",<br><br>
+                            price: 29.99,<br><br>
+                            quantity: 3<br><br>
+                        }<br><br>
+                    ]<br><br><br><br>
+                    
+                    const student = {<br><br>
+                        firstName: "david",<br><br>
+                        strengths:["music","art"],<br><br>
+                        exams: {<br><br>
+                            midterm:92,<br><br>
+                            final:88<br><br>
+                        }<br><br>
+                    }<br><br>
+                </code>
+            </div>
+            //spread objects<br>
+            <br>
+const dataFromForm = {<br>
+    email: "blueman@gmail.com",<br>
+    password: "tobias123!",<br>
+    username: "tfunke"<br>
+}<br>
+const newUser = {...dataFromForm, id: 2345, isAdmin: false}<br>
+<br>
+newUser<br>
+{email: 'blueman@gmail.com', password: 'tobias123!', username: 'tfunke', id: 2345, isAdmin: false}<br>
+email: "blueman@gmail.com"<br>
+id: 2345<br>
+isAdmin: false<br>
+password: "tobias123!"<br>
+username: "tfunke"<br>
+<br><br>
+//destructuring objects<br>
+<br>
+const user = {<br>
+    email: "harvey@gmail.com",<br>
+    password: "scott194smith",<br>
+    firstName: "Harvey",<br>
+    lastName: "Milk",<br>
+    born: 1930,<br>
+    died: 1978,<br>
+    bio:"gay politician",<br>
+    city:"san francisco",<br>
+    state: "california"<br>
+}<br>
+const { email, firstName, lastName, city, bio} = user;<br>
+<br>
+email<br>
+'harvey@gmail.com'<br>
+city<br>
+'san francisco'<br>
+bio<br>
+'gay politician'<br>
+<br>
+const { born: birthYear} = user;<br>
+<br>
+birthYear<br>
+1930<br>
+
+    
+
+        </div>

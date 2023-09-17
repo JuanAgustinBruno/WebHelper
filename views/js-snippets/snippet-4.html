@@ -1,0 +1,341 @@
+<div class="p">
+    <h2>ARRAYS :</h2> 
+    <p>Data structure that colects information</p>
+    <br>
+    <h3>Methods:</h3>
+
+    <ul class="ul__js-array">
+        <li class="li__js-array">PUSH:   adds an element to the queue of the array.</li>
+        <li class="li__js-array">POP:    removes the last element of the array</li>
+        <li class="li__js-array">SHIFT:  removes the first elemnt of the array</li>
+        <li class="li__js-array">UNSHIFT:  adds a new element to the beggining of the array</li>
+        <li class="li__js-array">CONCAT:   merges arrays</li>
+        <li class="li__js-array">INCLUDES:  display boolean condition</li>
+        <li class="li__js-array">indexOf:  display the element searched (if there is not, will be -1)</li>
+        <li class="li__js-array">REVERSE:  backflip the queue</li>
+        <li class="li__js-array">SLICE:    copy and paste to the new variable from the 0 to the number between ()</li>
+        <li class="li__js-array">SPLICE:   delete elements from the array</li>
+        <li class="li__js-array">SORT:  rearanges the array using some critearia.</li>
+    </ul><br>
+    <div class="div__js-inner">
+        <code>
+            let colors = ["red", "orange", "yellow"];<br><br>
+            colors[0] = "red";<br><br>
+            colors[1] = "orange";<br><br>
+            colors[2] = "yellow"; <br><br>
+            <span class="clr-comment">//new items can be added or modified writing the variable name + the numeral of the array = the new one or just call them out with the numeral</span> <br><br>
+                         
+                          
+            colors[5];    <span class="clr-comment">//undefined</span><br><br>
+            colors[5] = "blue"<br><br>
+            //["red","orange","yellow", empty x 2, "blue"]<br><br>
+            <span class="clr-comment">//to display an array on console just write the variable, to know length, variable.length</span><br><br>
+            let lottNums = [19,22,56,12,51];<br><br>
+    
+            lottNums.push(5)<br><br>
+            [19,22,56,12,51,5] <span class="clr-comment">//PUSH method added an element to the queue of the array</span><br><br>
+            lottNums.pop();<br><br>
+            [19,22,56,12,51] <span class="clr-comment">//POP method removed the last element of the array</span><br><br>
+            lottNums.shift();<br><br>
+            [22,56,12,51] <span class="clr-comment">//SHIFT method removed the first elemnt of the array</span><br><br>
+            lottNums.unshift(76);<br><br>
+            [79,22,56,12,51] <span class="clr-comment">//UNSHIFT method added a new element to the beggining of the array</span><br><br><br><br>
+    
+    
+            //ej<br><br>
+            const planets = ['The Moon','Venus', 'Earth', 'Mars', 'Jupiter']; <span class="clr-comment">//DO NOT TOUCH THIS LINE!</span><br><br>
+            planets.shift(); <span class="clr-comment">//"The Moon" out</span><br><br>
+            planets.push("Saturn"); <span class="clr-comment">//"Saturn" into queue</span><br><br>
+            planets.unshift("Mercury"); <span class="clr-comment">//"Mercury" in to start</span><br><br><br><br>
+
+            let cats= ["blue","kitty"];<br><br>
+            let dogs= ["rusty","wyatt"];<br><br>
+            let comboParty = dogs.concat(cats); <span class="clr-comment">//CONCAT method merges arrays</span><br><br>
+            comboParty <br><br>
+            ["rusty","wyatt","blue","kitty"]<br><br>
+            cats.includes("blue");<br><br>
+            true<br><br>
+            cats.includes("Blue"); <span class="clr-comment">//INCLUDES method display boolean condition</span><br><br>
+            false<br><br><br><br>
+
+            cats.indexOf("kitty") <span class="clr-comment">//indexOf method display the element searched (if there is not, will be -1)</span><br><br>
+            1<br><br><br><br>
+
+            comboParty.reverse(); <span class="clr-comment">//REVERSE method... backflip the queue</span><br><br>
+            (4) ['kitty', 'blue', 'wyatt', 'rusty']<br><br><br><br>
+
+            let colors = ["red", "orange", "yellow","green","blue","indigo","violet"];<br><br>
+            let coolColors = colors.slice(3) <span class="clr-comment">//SLICE method copy and paste to the new variable from the 0 to the number between ()</span><br><br>
+            coolColors<br><br>
+            (4) ['green', 'blue', 'indigo', 'violet']<br><br>
+            colors.slice(2,4) <span class="clr-comment">//SLICE from #2 to #3</span> <br><br>
+            (2) ['yellow', 'green']<br><br>
+            colors.slice(-3); <span class="clr-comment">//SLICE counting elements from the end</span><br><br>
+            (3) ['blue', 'indigo', 'violet']<br><br><br><br>
+
+            colors.splice(5,1) <span class="clr-comment">//(5#,1 quantity of elemnts to delete)</span><br><br>
+            ['indigo'] <span class="clr-comment">//SPLICE method, deleted 1 element from the array</span><br><br>
+            colors.splice(3,0,"ambar","magenta");  <span class="clr-comment">//added 2 new elements starting from the #given</span><br><br>
+            colors<br><br>
+            (9) ['red', 'orange', 'yellow', 'ambar', 'magenta', 'green', 'blue', 'indigo', 'violet']<br><br><br><br>
+
+            colors.sort(); <span class="clr-comment">//SORT method, rearanged the array using some critearia.</span><br><br>
+            (9) ['ambar', 'blue', 'green', 'indigo', 'magenta', 'orange', 'red', 'violet', 'yellow']<br><br><br><br>
+
+            <span class="clr-comment">//NESTED ARRAYS</span><br><br>
+            const gameBoard = [["x","o","x"],["o","null","x"],["o","o","x"]]<br><br><br><br>
+
+            gameBoard<br><br>
+            (3) [Array(3), Array(3), Array(3)]<br><br>
+            0: (3) ['x', 'o', 'x']<br><br>
+            1: (3) ['o', 'null', 'x']<br><br>
+            2: (3) ['o', 'o', 'x']<br><br>
+            length: 3<br><br>
+            [[Prototype]]: Array(0)<br><br><br><br>
+
+            gameBoard[1] //display the array #1<br><br>
+            (3) ['o', 'null', 'x']<br><br><br><br>
+
+            gameBoard[1][1] //display the element #1 on array #1<br><br>
+            'null'<br><br><br><br>
+
+            <span class="clr-comment">//Exercise NESTED ARRAYS</span><br><br><br><br>
+
+            const airplaneSeats = [<br><br>
+                ['Ruth', 'Anthony', 'Stevie'],<br><br>
+                ['Amelia', 'Pedro', 'Maya'],<br><br>
+                ['Xavier', 'Ananya', 'Luis'],<br><br>
+                ['Luke', null, 'Deniz'],<br><br>
+                ['Rin', 'Sakura', 'Francisco']<br><br>
+            ];<br><br><br><br>
+
+            airplaneSeats[3].splice(1,1,"Hugo"); <span class="clr-comment">//located on the #3 array, executed method splice placing on the #1, deleting 1, adding new string.</span><br><br><br><br>
+
+            airplaneSeats<br><br>
+            (5) [Array(3), Array(3), Array(3), Array(3), Array(3)]<br><br>
+            0: (3) ['Ruth', 'Anthony', 'Stevie']<br><br>
+            1: (3) ['Amelia', 'Pedro', 'Maya']<br><br>
+            2: (3) ['Xavier', 'Ananya', 'Luis']<br><br>
+            3: (3) ['Luke', 'Hugo', 'Deniz']<br><br>
+            4: (3) ['Rin', 'Sakura', 'Francisco']<br><br>
+            length: 5<br><br>
+            [[Prototype]]: Array(0)<br><br><br><br>
+            
+        
+            </code>
+            //FOR EACH<br>
+<br>
+            const numbers = [1,2,3,4,5,6,7,8,9,10,11,12]<br>
+                    <br>
+            numbers.forEach(function(el){<br>
+                if (el % 2 === 0) {<br>
+                console.log(el)<br>
+                }<br>
+            })<br>
+            <br>
+            const movies = [<br>
+                {<br>
+                    title: "amadeus",<br>
+                    score: 99<br>
+                },<br>
+                {
+                    title: "sta<br>nd by me",<br>
+                    score: 85<br>
+                },<br>
+                {<br>
+                    title: "parasite",<br>
+                    score: 95<br>
+                }<br>
+            ]<br>
+            <br>
+            movies.forEach(function (movie) {<br>
+                console.log(`${movie.title} - ${movie.score}/100`)<br>
+            })<br>
+            <br>
+            <br>
+            // MAP (call back from an array to create a new array)<br>
+            <br>
+            const texts = ["rofl", "lol", "omg", "ttyl"];<br>
+            const caps = texts.map( function (t){<br>
+                return t.toUpperCase();<br>
+            })<br>
+            ['ROFL', 'LOL', 'OMG', 'TTYL']<br>
+            <br>
+            exercise: 47<br>
+            <br>
+            const firstNames = fullNames.map(function(n){<br>
+                return n.first;<br>
+            })<br>
+            //filter<br>
+<br>
+const movies = [<br>
+    {<br>
+        title: "amadeus",<br>
+        score: 99,<br>
+        year: 2000,<br>
+    },<br>
+    {<br>
+        title: "stand by me",<br>
+        score: 85,<br>
+        year: 2001,<br>
+    },<br>
+    {<br>
+        title: "parasite",<br>
+        score: 95,<br>
+        year: 1999,<br>
+    }<br>
+]<br>
+<br>
+const goodMovies = movies.filter(m => m.score > 80)<br>
+const goodTitles = goodMovies.map(m => m.title)<br>
+<br>
+movies.filter(m => m.score > 80).map(m => m.title);<br>
+const badMovies = movies.filter(m => m.score < 70)<br>
+<br>
+const recentMovies = movies.filter(m => m.year > 2000)<br>
+<br>
+exercise: 49<br>
+<br>
+function validUserNames(usernames) {<br>
+    // your code here<br>
+      let shortuser = usernames.filter(usernames => usernames.length < 10);<br>
+      return shortuser;<br>
+    <br>  
+  }<br>
+<br>
+//SOME & EVERY (returns bolean, true or false)<br>
+<br>
+const words = ["dog", "jello", "log"];<br>
+<br>
+words.some(word => {<br>
+    return word.length > 4;<br>
+})<br>
+<br>
+//true <br>
+<br>
+words.every(word =>[0] === "d");<br>
+<br>
+//false<br>
+<br>
+ exercise: 50<br>
+<br>
+ function allEvens (array) {<br>
+    if (<br>
+    array.every(array => array %2 === 0)
+    ) <br>
+    {<br>
+    return true; <br>
+        <br>
+    } else {<br>
+        return false;<br>
+    }<br>
+} <br>
+//Spread (separates elements inside an object, array , string)<br>
+<br>
+const nums = [1, 2, 3 , 4, 5]<br>
+<br>
+console.log(...nums)<br>
+1 2 3 4 5 <br>
+<br>
+console.log(..."hello")<br>
+h e l l o<br>
+<br>
+<br>
+//spread with array literals<br>
+<br>
+const cats = ["blue", "scout", "rocket"];<br>
+const dogs = ["rusty", "wyatt"];<br>
+<br>
+const allPets = [...cats, ... dogs];<br>
+(5) ['blue', 'scout', 'rocket', 'rusty', 'wyatt']<br>
+<br>
+[..."hello"]<br>
+(5) ['h', 'e', 'l', 'l', 'o']<br>
+<br>
+<br>
+//destructuring arrays<br>
+<br>
+const scores = [ 199, 188, 177, 166, 155, 144]<br>
+const highScore= scores[0];<br>
+const secondHigh= scores[1];<br>
+const [gold, silver, bronze, ...everyoneElse] = scores;<br>
+scores<br>
+(6) [199, 188, 177, 166, 155, 144]<br>
+highScore<br>
+199<br>
+secondHigh<br>
+188<br>
+bronze<br>
+177<br>
+silver<br>
+188<br>
+gold<br>
+199<br>
+everyoneElse<br>
+(3) [166, 155, 144]<br>
+<br><br>
+//The Arguments Object<br>
+//Contains all the arguments passed to the function (doesnt work on arrow functions)
+//array methods doesnt work with it<br>
+function sumAll(){<br>
+    let total = 0;<br>
+    for (let i = 0; i < arguments.length; i++)<br>
+    {   total += arguments[i];<br>
+    }<br>
+    return total;<br>
+}<br>
+sumAll(8, 4, 3, 2); //17<br>
+sumAll(2, 3); //5<br>
+
+<br><br><br>
+
+//rest<br>
+//REST PARAMS: Collects all remaining arguments into an actual array<br>
+
+function sum(...nums){<br>
+    console.log(nums)<br>
+    return nums.reduce((total, el) => total + el)<br>
+}   <br>
+<br>
+sum(1,2,3,4)<br>
+test.js:2 (4) [1, 2, 3, 4]0: 11: 22: 33: 4length: 4[[Prototype]]: Array(0)<br>
+10<br>
+
+<br><br>
+function raceResults(gold, silver, ...everyoneElse){<br>
+    console.log(`Gold medal: ${gold}`)<br>
+    console.log(`silver medal: ${silver}`)<br>
+    console.log(`everyone else: ${everyoneElse}`)<br>
+}<br>
+raceResults("ala", "pala", "mala", "tala", "sala")<br>
+test.js:2 Gold medal: ala<br>
+test.js:3 silver medal: pala<br>
+test.js:4 everyone else: mala,tala,sala<br>
+
+<br><br>
+//destructuring arrays<br>
+<br>
+const scores = [ 199, 188, 177, 166, 155, 144]<br>
+const highScore= scores[0];<br>
+const secondHigh= scores[1];<br>
+const [gold, silver, bronze, ...everyoneElse] = scores;<br>
+<br>
+scores<br>
+(6) [199, 188, 177, 166, 155, 144]<br>
+highScore<br>
+199<br>
+secondHigh<br>
+188<br>
+bronze<br>
+177<br>
+silver<br>
+188<br>
+gold<br>
+199<br>
+everyoneElse<br>
+(3) [166, 155, 144]<br>
+
+
+        </div>
+
+        
