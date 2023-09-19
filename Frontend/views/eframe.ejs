@@ -8,17 +8,19 @@
 <body>
         
 <link rel="stylesheet" href="stylesbox.css">
+<link rel="stylesheet" href="styles.css">
 
 
 
 <nav style="width: 100%; background-color: grey; height: 4rem; flex-direction: row; ">
+        <div style="width: 10rem;"><button onclick="window.location.assign('/')">BACK</button></div>
         <div style="display:flex; flex-direction:row;"> 
-                <a class="btn" href="#italia">ITALIA</a>
-                <a class="btn" href="#español"">ESPAÑOL</a>
-                <a class="btn" href="#ruso">РУССКИЙ</a>
+                <a class="nav_button" href="#italia">ITALIA</a>
+                <a class="nav_button" href="#español"">ESPAÑOL</a>
+                <a class="nav_button" href="#ruso">РУССКИЙ</a>
                 
         </div>
-        <div style="width: 10rem;"><button onclick="window.location.assign('/')" />BACK</button></div>
+        
         
 </nav>
 <div style="margin: 5px; display:flex ; flex-direction: column; flex-wrap: wrap; justify-content: center;">
@@ -41,7 +43,9 @@
                 <div class="frame-container"><iframe  id="myIframe" src="https://www.kp.ru/" width="930" height="1000"  ></iframe></iframe></div>
                 <div class="frame-container"><iframe  id="myIframe" src="https://www.rg.ru/" width="930" height="1000"  ></iframe></iframe></div>
         </div>
-        <div class="frame-container"><iframe  id="myIframe" src="https://www.rt.com/" width="930" height="1000"  ></iframe></iframe></div>
+        <div style="display:flex ;  flex-wrap: wrap; justify-content: center;">
+                <div class="frame-container"><iframe  id="myIframe" src="https://www.rt.com/" width="930" height="1000"  ></iframe></div>
+        </div>
         <!-- <div><iframe src="https://ecutools.eu/" width="400" height="400"></iframe></div>
         <div><iframe src="https://www.hex-17.com/" width="400" height="400"></iframe></div>
         <div><iframe src="https://alduselectronics.com/" width="400" height="400"></iframe></div>
