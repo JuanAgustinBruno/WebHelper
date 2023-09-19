@@ -84,7 +84,8 @@ button:active {
 
 .content_box{
     margin-top: 3rem;
-    text-align: center;    
+    text-align: center; 
+
 }
 
 ul {
@@ -133,4 +134,8 @@ td {
     
     position: inherit;
     padding-left: 26px;
+}
+
+#cascade{
+    width: 60vw;
 }

@@ -10,7 +10,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
+    
 }
+
 
 .nav_main_buttons {
     display: flex;
@@ -20,8 +23,12 @@
     width: 300px;
     height: 500px;
     border-radius: 20px;
-    background-color: black;
+    background-color: gray;
     opacity: 0.7;
+    background-image: url(public/pick1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .nav_button {
@@ -113,8 +120,6 @@ body {
     flex-direction: column;
     align-items: center;
     background-color: black;
-    background-image: url(public/pick1.jpg);
-    background-repeat: no-repeat;
-    background-size:cover;
 }
+
 
