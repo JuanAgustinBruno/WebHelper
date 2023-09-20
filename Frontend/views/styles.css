@@ -5,15 +5,29 @@
     
 }
 /* -----------------------MAIN MENU---------------------------- */
+
+
+.navhead {
+    width: 100vw;
+    padding: 1rem;
+    text-align: center;
+    /* color: rgb(0, 255, 221); */
+    background-color: rgb(112, 139, 148);
+    margin-bottom: 30px;
+    position: fixed;
+}
 .nav_main_container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
+    position: fixed;
+    margin-top: 10%;
     
 }
-
+canvas{
+    display: block;
+}
 
 .nav_main_buttons {
     display: flex;
@@ -23,12 +37,14 @@
     width: 300px;
     height: 500px;
     border-radius: 20px;
-    background-color: gray;
-    opacity: 0.7;
-    background-image: url(public/pick1.jpg);
+    background-color: black;
+    opacity: 0.8;
+    border: 2px solid rgb(112, 139, 148);
+    /* background-image: url(public/pick1.jpg); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    padding: 2em 0 2em 0;
 }
 
 .nav_button {
@@ -103,17 +119,7 @@
     background-color: white;
 }
 
-.titlecenter {
-    
-    width: 350px;
-    padding: 1rem;
-    text-align: center;
-    color: rgb(0, 255, 221);
-    background-color: blue;
-    border-radius: 20px;
-    margin-top: 15px;
-    margin-bottom: 30px;
-}
+
 
 body {
     display: flex;
