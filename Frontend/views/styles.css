@@ -8,6 +8,7 @@
 
 
 .navhead {
+    
     width: 100vw;
     padding: 1rem;
     text-align: center;
@@ -15,6 +16,7 @@
     background-color: rgb(112, 139, 148);
     margin-bottom: 30px;
     position: fixed;
+    
 }
 .nav_main_container {
     display: flex;

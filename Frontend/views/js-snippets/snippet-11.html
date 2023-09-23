@@ -1,4 +1,4 @@
-//ASYNC     <br><br>                                                                                                                                       <br>
+<h1>ASYNC   </h1>  <br><br>                                                                                                                                       <br>
 <p>
     
 async function fetchFromApi(url){<br>
@@ -16,9 +16,24 @@ async function fetchFromApi(url){<br>
 //callstack: is the queue where the processes get stacked and executed 1 by 1, since javascript can just run 1 process at the time.<br>
 //simultaneous operations are handled by timeout settings that organize the process.<br>
 <br>
-//callback<br>
-
+<h2>Callback</h2><br>
+<p>A callback is a function passed as an argument to another function</p>
     <br>
+
+<p>Example:</p> <br>
+<p>
+    <p>function myFunc(callback){</p>
+        <div class="indent">
+        <p>const a = [4, 5, 6];</p>
+        <p>let element = document.querySelector(".out-1");</p>
+        <p>callback(element, a);</p>
+    <p>}</p></div><br>
+    <p>function out(elem,arr){</p>
+        <div class="indent">
+       <p> elem.innerHTML = arr.join(" - ");</p>
+    }</div><br>
+    <p>myFunc(out);</p><br><br>
+</p>   
 <p>
     <p>setTimeout(() => {</p>
         <div class="indent">
