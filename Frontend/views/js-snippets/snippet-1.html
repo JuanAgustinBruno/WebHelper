@@ -1,15 +1,87 @@
 <div class="div__js-outer">
     <h1>JavaScript Variables</h1><br>
 
+    <div>
+        <div style="max-width: 500px" >
+            <ul>
+                <li>
+                    <h2>undeclared</h2>
+                    <p> Example : x = 5;</p>
+                    <p>Variable without a var declaration is treated as global. If you are in a browser, that scope is window</p>
+                    <br>
+                </li>
+        
+                <li>
+                    <h2>var</h2>
+                    <p>The var statement declares function-scoped or globally-scoped variables, optionally initializing each to a value.</p>
+                    <br>
+                </li>
+        
+               <li>
+                   <h2>let</h2>
+                    <p>The let declaration declares re-assignable, block-scoped local variables, optionally initializing each to a value.</p>
+                    <br>
+               </li>
+        
+                <li>
+                    <h2>const</h2>
+                    <p>The const declaration declares block-scoped local variables. The value of a constant can't be changed through reassignment using the assignment operator, but if a constant is an object, its properties can be added, updated, or removed.</p>
+                </li>
+            </ul>
+        </div><br>
+        <br>
+    
+        <div style="margin-left: 3rem;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Scope</th>
+                        <th>Hoisting</th>
+                        <th>Can Be Reassigned</th>
+                        <th>Can Be Redeclared</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td style="background-color: white;"><a
+                                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var"><code>var</code></a>
+                        </td>
+                        <td>Function scope</td>
+                        <td>Yes</td>
+                        <td>Yes</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: white;"><a
+                                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let"><code>let</code></a>
+                        </td>
+                        <td>Block scope</td>
+                        <td>No</td>
+                        <td>Yes</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: white;"><a
+                                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const"><code>const</code></a>
+                        </td>
+                        <td>Block scope</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>No</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br><br>
+    <h2>SCOPE:</h2>
     <ul>
-        <li>Automatic: x = 5;</li>
-        <li>
-            var: used in code written for older browsers 
-        </li>
-        <li>let: </li>
-        <li>const: </li>
-    </ul><br><br>
-
+        <li><p>Global variables are those declared outside of a block</p></li>
+        <li><p>Local variables are those declared inside of a block</p></li>
+    </ul>
+    <img src="public/scope.png" alt="">
     <h2>Data types:</h2>
     <ul>
         <li>string: "hi"</li>
@@ -20,40 +92,19 @@
         <li>symbol</li>
         <li>bigint</li>
     </ul><br><br>
-    <h2>Declare variable:</h2>
 
-    <div class="div__js-inner"><code><span class="clr-var">let</span> <span class="clr-var-name">variable-name</span> = <span class="clr-meth">number-string-object</span>;</code></div>
-</div>
 
-<h2>Modify variable:</h2>
+
+
+
+
+
+<h1>OPERATORS</h1>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators">MDN</a>
 
 <div class="div__js-inner">
     <code>
-        variable = variable + 1;  -----> variable += 1; ------> variable++;<br><br>
-
-        <br>
-        variable = variable - 1;  -----> variable -= 1; ------>  variable--; <br>
-
-        <br>
         
-    </code>
-</div>
-
-<h2>Variable that cant be modified:</h2>
-
-<div class="div__js-inner"><code>const pi = 3.14;</code></div>
-
-
-<h2>Old javascript variable</h2>
-
-<div class="div__js-inner"><code>var variable = 36;</code></div>
-
-<h2>Variable BOOLEAN</h2>
-
-<div class="div__js-inner">
-    <code>
-        true<br>
-        false<br><br>
         1 == "1" (equality regardless of variable type)<br>
         true<br><br>
         1 === "1" (strict equality)<br>
