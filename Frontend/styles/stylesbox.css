@@ -1,0 +1,24 @@
+*. {
+    background-color: black;
+}
+div {
+    background-color: black;
+}
+#wraper {
+    display: flex;
+    flex-direction: column;
+}
+#innerwraper {
+    display: flex;
+    flex-direction: row;
+}
+
+#box {
+    background-color: yellow;
+    height: 80%;
+    width: 80%;
+}
+
+button {
+    background-color: blue;
+}
